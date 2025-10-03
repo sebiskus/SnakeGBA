@@ -24,8 +24,7 @@ private:
 
 public:
     void show_bg();
-    void show_menu();
-    void show_menu_with_speed(int speed);  // Neue Funktion
+    void show_menu(int speed);
     void show_startup();
     void update();
     void clear();           // Vollständiges Reset

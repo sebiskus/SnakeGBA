@@ -25,21 +25,16 @@ void Menu::show_startup() {
     _tg_small.generate(-100, 68, build, _startup_sprites);
 }
 
-void Menu::show_menu() {
-    _startup_sprites.clear();
-    _menu_sprites.clear();
-    _tg.generate(-96, -28, "Snake GBA", _menu_sprites);
-    _tg_small.generate(-96, 04, "(Press A to start)", _menu_sprites);
-    _tg_small.generate(-96, 28, "select: increase speed, start: reset", _menu_sprites);
-}
 
 // Neue Funktion für Speed-Anzeige
-void Menu::show_menu_with_speed(int speed) {
+void Menu::show_menu(int speed) {
     clear_sprites(); // Sprites zurücksetzen vor neuer Erstellung
     
     _tg.generate(-96, -28, "Snake GBA", _menu_sprites);
     _tg_small.generate(-96, 14, "(Press A to start)", _menu_sprites);
-    _tg_small.generate(-96, 28, "select: increase speed, start: reset", _menu_sprites);
+    _tg_small.generate(-96, 28, "select: increase speed", _menu_sprites);
+    _tg_small.generate(-96, 38, "start:  reset speed value", _menu_sprites);
+
     
     // Speed-Text erstellen mit ostringstream
     bn::string<32> speed_text;

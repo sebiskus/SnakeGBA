@@ -17,7 +17,6 @@ void Game::run() {
 
         switch(current_game_state) {
             case MENU: {
-            menu.show_menu();
             menu.show_bg();
             wait_for_input();
             menu.clear();
@@ -115,7 +114,7 @@ void Game::wait_for_input(){
         if (bn::keypad::start_pressed()) {
             reset_speed();
         }
-        menu.show_menu_with_speed(speed);
+        menu.show_menu(speed);
         menu.update();
         bn::core::update();
     }
