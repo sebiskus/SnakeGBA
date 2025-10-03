@@ -1,7 +1,7 @@
 /*
 * GBA Snake
 * created by: @sebiskus
-* made with Butano
+* made with Butano https://github.com/GValiente/butano
 */
 
 #include "bn_core.h"
