@@ -1,0 +1,1 @@
+cavegirl_green_bn_gfx.o: cavegirl_green_bn_gfx.s

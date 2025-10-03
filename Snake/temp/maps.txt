@@ -1,0 +1,11 @@
+{ map_1 {
+    safe_area: x, y
+    safe_area: x, y
+
+    portal: true
+    portal_0: x, y
+    portal_1: x,y
+    
+}
+
+}
