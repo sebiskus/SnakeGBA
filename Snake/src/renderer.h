@@ -24,8 +24,12 @@
 
 /*
 TODO
-- Custom Themes
-- Switch/Case wechselt die ptr durch
+-   Renderer komplett kaputt. 
+    Es dürfen nur maximal 128 Sprites gerendert werden!!!
+=>  Komplett umschreiben
+
+-   Custom Themes
+-   Switch/Case wechselt die ptr durch
 
 */
 
