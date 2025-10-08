@@ -2,11 +2,14 @@
 #include "bn_vector.h"
 #include "bn_array.h"
 #include "bn_keypad.h"
+#include "bn_sound_items.h"
 #include "map.h"
 
 #include "game_state.h"
+#include "direction.h"   
 
 
+class Controls;
 
 
 enum SCANNER {
@@ -14,13 +17,6 @@ enum SCANNER {
     APPLE,
     BORDER,
     PLAYER,
-};
-
-enum DIRECTION {
-    UP,
-    LEFT, //default
-    RIGHT,
-    DOWN,
 };
 
 class Player {
@@ -62,9 +58,9 @@ public:
     Player();
     ~Player();
     void start(int map_speed, Map& map);
-    void update(SCANNER scanner);
+    void update(SCANNER scanner, Controls& controls);
     SCANNER front_scanner(Map& map, GAME_STATE switch_game_state, const bn::vector<pos, 200>& snake_body);
-    SCANNER check_next_position(Map& map);
+    SCANNER check_next_position(Map& map, DIRECTION dir);
 
     void movement(SCANNER scanner);
     void update_position(int dx, int dy, SCANNER scanner);
@@ -76,5 +72,9 @@ public:
     void reset_player(Player& player) {
         player = Player();
     };
+
+    // Neu: Getter, damit Game/Controls den aktuellen Kurs kennen
+    DIRECTION get_direction() const { return direction; }
+
 
 };

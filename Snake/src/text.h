@@ -3,8 +3,8 @@
 #include "bn_string.h"
 
 /* Year/Month/Day */
-bn::string<16> build = "build 2025_09_27";
-bn::string<5> game_title = "Snake";
+bn::string<16> build = "build 2025_10_07";
+bn::string<10> game_title = "Snake GBA";
 
 struct language_template {
     //string button_prompt;

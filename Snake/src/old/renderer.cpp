@@ -1,122 +1,77 @@
-//Idee: Snake spielt sich auf einer Matrix Map ab. Der Renderer Visualisiert das Spiel auf dem GBA.
-// dabei werden die Koordinaten der Matrixpunkte genommen und die Tiles werden auf den Positionen
-// gezeichnet (also Index 1|2 = 16|32 in pixel bei 4x4 Tiles pro Array-Element)
-
-
 #include "renderer.h"
-#include "bn_sprite_items_square.h" // Die schwarze 8x8 square.bmp
-#include "bn_color.h"
-#include "bn_math.h"
 
-Renderer::Renderer() : current_theme(&basic) {
-    initialize();
+Renderer::Renderer() {
+    this->renderer_scaler = 1;
+    this->current_theme = basic;
+    this->color = bn::color(16,16,16);
+    bn::backdrop::set_color(bn::color(0, 0, 0));
 }
 
-void Renderer::initialize() {
-    map_sprites.clear();
-    create_palettes();
+void create_solid_background() {
+    bn::color background_color = bn::color(0, 7, 18);
+    bn::backdrop::set_color(background_color);
 }
 
-bn::color Renderer::convert_rgb_to_bn_color(const rgb& color) {
-    // RGB-Werte von 0-255 auf GBA-Format (5-Bit pro Kanal) konvertieren
-    int r = bn::min(31, (color.red * 31) / 255);
-    int g = bn::min(31, (color.green * 31) / 255);
-    int b = bn::min(31, (color.blue * 31) / 255);
+// Score anzeigen lassen
+void Renderer::update_score(int score_value) {
+    clear_sprites();
+
+    bn::string<32> score_text;
+    bn::ostringstream score_stream(score_text);
+
+    score_stream << "Score: " << score_value;
+    _text_generator.generate(offset_x_score, 0, score_text, ui_sprites);
+}
+
+
+/*
+Eigentlicher Game Renderer:
+Idee: Snake spielt sich auf einer Matrix Map ab. Der Renderer Visualisiert das Spiel auf dem GBA.
+dabei werden die Koordinaten der Matrixpunkte genommen und die Tiles werden auf den Positionen
+gezeichnet (also Index 1|2 = in 8|16 px rendern bei 8x8 Sprites)
+
+Rendert die Map step by step:
+- Garbage löschen
+- Hintergrund rendern
+- Koordinaten berechnen
+- Aus Map Kopie alle Tiles nach und nach rendern
+*/
+void Renderer::map_renderer(Map& map, int renderer_scaler, bn::vector<bn::sprite_ptr, 160>& squares, theme current_theme) {
+    squares.clear();
+
+    bn::backdrop::set_color(bn::color(0, 7, 16)); // #00479A
     
-    return bn::color(r, g, b);
-}
-
-void Renderer::create_palettes() {
-    // Nur 3 Paletten erstellen statt für jeden Sprite eine neue
-    wall_palette = bn::sprite_items::square.palette_item().create_new_palette();
-    snake_palette = bn::sprite_items::square.palette_item().create_new_palette();
-    apple_palette = bn::sprite_items::square.palette_item().create_new_palette();
+    int tile_size = 8 * renderer_scaler;
+    int start_x = -(x_size * tile_size) / 2 + tile_size / 2  + offset_x_map;
+    int start_y = -(y_size * tile_size) / 2 + tile_size / 2;
     
-    // Farben entsprechend dem aktuellen Theme setzen
-    if (wall_palette.has_value()) {
-        wall_palette->set_color(1, convert_rgb_to_bn_color(current_theme->wall));
-    }
-    if (snake_palette.has_value()) {
-        snake_palette->set_color(1, convert_rgb_to_bn_color(current_theme->snake));
-    }
-    if (apple_palette.has_value()) {
-        apple_palette->set_color(1, convert_rgb_to_bn_color(current_theme->apple));
-    }
-}
-
-void Renderer::clear_all_sprites() {
-    map_sprites.clear();
-}
-
-void Renderer::render_map(const Map& map) {
-    clear_all_sprites();
-    
-    // Zentrier-Offset berechnen für 8x8 Tiles
-    const int screen_center_x = 120; // GBA Bildschirmbreite / 2
-    const int screen_center_y = 80;  // GBA Bildschirmhöhe / 2
-    const int map_pixel_width = x_size * TILE_SIZE;
-    const int map_pixel_height = y_size * TILE_SIZE;
-    const int offset_x = -(map_pixel_width / 2);
-    const int offset_y = -(map_pixel_height / 2);
-    
-    // Durch das gesamte Map-Array iterieren
-    for (int map_y = 0; map_y < y_size; map_y++) {
-        for (int map_x = 0; map_x < x_size; map_x++) {
-            int tile_value = map[map_y][map_x];
+    for(int y = 0; y < y_size; y++) {
+        for(int x = 0; x < x_size; x++) {
+            int tile_type = map[y][x];
             
-            // Skip empty/floor tiles (Wert 0) - diese werden nicht gerendert
-            if (tile_value == FLOOR_TILE) {
-                continue;
-            }
+            if(tile_type == 0) continue;
             
-            // Bildschirmposition berechnen (relativ zur Bildschirmmitte)
-            int screen_x = offset_x + (map_x * TILE_SIZE);
-            int screen_y = offset_y + (map_y * TILE_SIZE);
+            int sprite_x = start_x + (x * tile_size);
+            int sprite_y = start_y + (y * tile_size);
             
-            // Square-Sprite erstellen und positionieren
-            if (map_sprites.size() < map_sprites.max_size()) {
-                auto sprite = bn::sprite_items::square.create_sprite(screen_x, screen_y);
-                
-                // Geteilte Palette basierend auf Tile-Typ zuweisen
-                switch (tile_value) {
-                    case WALL_TILE:
-                        if (wall_palette.has_value()) {
-                            sprite.set_palette(*wall_palette);
-                        }
-                        break;
-                    case SNAKE_TILE:
-                        if (snake_palette.has_value()) {
-                            sprite.set_palette(*snake_palette);
-                        }
-                        break;
-                    case APPLE_TILE:
-                        if (apple_palette.has_value()) {
-                            sprite.set_palette(*apple_palette);
-                        }
-                        break;
-                }
-                
-                map_sprites.push_back(bn::move(sprite));
+            switch(tile_type) {
+                case 1: // Wall
+                    squares.push_back(bn::sprite_items::wall_square.create_sprite(sprite_x, sprite_y));
+                    break;
+                case 2: // Snake
+                    squares.push_back(bn::sprite_items::snake_square.create_sprite(sprite_x, sprite_y));
+                    break;
+                case 3: // Apple
+                    squares.push_back(bn::sprite_items::apple_square.create_sprite(sprite_x, sprite_y));
+                    break;
+                default:
+                squares.push_back(bn::sprite_items::square.create_sprite(sprite_x, sprite_y));
+                    break;
             }
         }
     }
 }
 
-void Renderer::set_theme(const theme& new_theme) {
-    current_theme = &new_theme;
-    
-    // Bestehende Paletten-Farben aktualisieren
-    if (wall_palette.has_value()) {
-        wall_palette->set_color(1, convert_rgb_to_bn_color(current_theme->wall));
-    }
-    if (snake_palette.has_value()) {
-        snake_palette->set_color(1, convert_rgb_to_bn_color(current_theme->snake));
-    }
-    if (apple_palette.has_value()) {
-        apple_palette->set_color(1, convert_rgb_to_bn_color(current_theme->apple));
-    }
-}
-
-void Renderer::update_display() {
-    // Butano behandelt automatisches Rendering der Sprites
+void Renderer::clear_sprites() {
+    ui_sprites.clear();
 }

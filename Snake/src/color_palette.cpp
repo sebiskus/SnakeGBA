@@ -1,4 +1,5 @@
 #include "color_palette.h"
+#include "bn_keypad.h"
 
 // Theme-Definitionen
 const theme basic {
@@ -39,7 +40,7 @@ const theme rm {
 const theme hka_kickerz {
     "HKA Kickerz",
     6,
-    {0,0,0},
+    {2,2,2},
     {15,15,15},
     "..."
 };
@@ -51,12 +52,20 @@ const theme pink {
     "Ziemlich pink."
 };
 const theme debug {
-    "title",
+    "debug_theme",
     8,
     {0,0,0},
     {15,15,15},
     "description"
 };
+theme themes[] = {basic, inverted, terminal, bsod, rm, hka_kickerz, pink, debug};
+
+theme switch_theme(int theme_id) {
+    return themes[theme_id];
+}
+bn::string<20> get_theme_name(int theme_id) {
+    return themes[theme_id].name;
+}
 
 //TODO: Individuelle Designs für iOS Anwendung. Wird im save File geschrieben und der
 // Code der iOS App liest beim Update die File und wendet neue Designs an

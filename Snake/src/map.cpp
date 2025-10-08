@@ -53,15 +53,16 @@ int map0[y_size][x_size] = { //16x10
     {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
 };
 
+/* Test-Map um Garbage collection der Sprites zu testen */
 int map1[y_size][x_size] = { //16x10
     {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
     {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
     {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
     {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
     {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
- {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
- {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
- {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+    {1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1},
+    {1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1},
+    {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
     {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
     {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
 };
@@ -104,7 +105,7 @@ void update_map(Map& map, int mapID, const bn::vector<pos, 200>& snake_body) {
         int snake_x = snake_body[i].x;
         int snake_y = snake_body[i].y;
         
-        // Apfel gefressen?
+        // Apfel schnabuliert?
         if(apple_exists && snake_x == current_apple_location.x && snake_y == current_apple_location.y) {
             apple_exists = false;
             spawn_apple(map);
@@ -122,16 +123,16 @@ spawn spawn_snake(Map& map){
     return {spawn_x, spawn_y};
 }
 
-//TODO: DIE FUNKTION IST NUR TEMPORÄR SO IMPLEMENTIERT WORDEN
-//HIER ALS PARAMETER DIE AKTUELLE POSITION VON APFEL UND SNAKE, DAMIT ES NICHT ÜBERLAPPT
 
+/*
+TODO:
+Besseren Algorithmus anwenden. Diese Implementierung ist völliger Müll
+*/
 void spawn_apple(Map& map) {
-    // Seed ist bereits beim Boot initialisiert
     int max_attempts = 100;
     int attempts = 0;
     
     do {
-        // Korrigierte Grenzen für Array-Zugriff
         current_apple_location.x = global_random.get_unbiased_int(1, x_size - 1);
         current_apple_location.y = global_random.get_unbiased_int(1, y_size - 1);
         attempts++;

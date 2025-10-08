@@ -7,6 +7,7 @@ enum GAME_STATE {
     PAUSE,       // pausiert: keine Aktualisierungen
     MENU,
     INITIALIZE,
+    _DEBUG,
 };
 
 #endif

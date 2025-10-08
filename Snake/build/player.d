@@ -32,6 +32,9 @@ player.o: /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/player.cpp \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_vector_fwd.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_array.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_keypad.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sound_items.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sound_item.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sound_handle.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/map.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_random.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_math.h \
@@ -39,7 +42,9 @@ player.o: /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/player.cpp \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_reciprocal_lut.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_rule_of_three_approximation.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_seed_random.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/game_state.h
+ /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/game_state.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/direction.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/controls.h
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/player.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_core.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_span.h:
@@ -73,6 +78,9 @@ player.o: /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/player.cpp \
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_vector_fwd.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_array.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_keypad.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sound_items.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sound_item.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sound_handle.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/map.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_random.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_math.h:
@@ -81,3 +89,5 @@ player.o: /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/player.cpp \
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_rule_of_three_approximation.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_seed_random.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/game_state.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/direction.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/controls.h:

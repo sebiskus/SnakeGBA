@@ -1,4 +1,21 @@
 
+renderer.cpp:
+Komplett umschreiben (siehe updated_renderer)
+
+player.cpp:
+- Steuerung überarbeiten. Soll bereits vorher Button Presses checken und temporär abspeichern
+
+
+
+
+
+
+
+
+
+
+
+
 renderer.cpp
 - Translation Layer von Array => richtige Grafik auf dem GBA Display
 -> tiles: 4x4px. Tile drawer = Array-Index * 2 + 1 für die Position

@@ -19,7 +19,8 @@ color_palette.o: \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_type_traits.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_assert_callback_type.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_utility.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_iterator.h
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_iterator.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_keypad.h
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/color_palette.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_string.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sstream.h:
@@ -40,3 +41,4 @@ color_palette.o: \
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_assert_callback_type.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_utility.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_iterator.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_keypad.h:

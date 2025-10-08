@@ -9,16 +9,17 @@
 constexpr int x_size = 16;
 constexpr int y_size = 10;
 
+struct pos {
+    int x;
+    int y;
+};
 
 struct spawn {
     int x;
     int y;
 };
 
-struct pos {
-    int x;
-    int y;
-};
+
 
 enum TileType {
         FLOOR_TILE = 0,

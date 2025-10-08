@@ -36,4 +36,7 @@ extern const theme hka_kickerz;
 extern const theme pink;
 extern const theme debug;
 
+
+theme switch_theme(int theme_id);
+bn::string<20> get_theme_name(int theme_id);
 #endif
