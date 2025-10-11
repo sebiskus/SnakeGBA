@@ -14,6 +14,7 @@
 #include "color_palette.h"
 
 #include "bn_sound.h"           // für bn::sound::play(...)
+#include "bn_sound_items.h"
 #include "bn_optional.h"        // optionaler Handle-Speicher
 
 #include "bn_sound_items.h"
@@ -35,8 +36,8 @@ class Game {
     Controls controls;
 
     bool startup;
-    int speed;
-    int theme_id;
+    unsigned int speed; //damit es nicht negativ wird
+    unsigned int theme_id;
 
 
     public:
@@ -45,7 +46,7 @@ class Game {
     GAME_STATE current_game_state = MENU;
     GAME_STATE switch_game_state = MENU;
 
-    bn::sound_handle loop_handle = bn::sound::play(bn::sound_items::menu_music, 1);
+    bn::sound_handle loop_handle = bn::sound::play(bn::sound_items::menu_music, 0);
 
     Game();
 

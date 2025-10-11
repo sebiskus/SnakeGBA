@@ -13,10 +13,8 @@ void Menu::show_bg() {
 
 void Menu::show_startup() {
     _startup_sprites.clear();
-    _tg.generate(-100, -10, "starting the game...", _startup_sprites);
-
-    //_tg.generate(-100, -10, "von Basti", _startup_sprites);
-    //_tg.generate(-100, 0, "an Pius", _startup_sprites);
+    _tg.generate(-100, -10, "by @sebiskus", _startup_sprites);
+    _tg.generate(-100, 2, "made with Butano", _startup_sprites);
 
     _tg_small.generate(-100, 68, build, _startup_sprites);
 }

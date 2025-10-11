@@ -1,3 +1,8 @@
+************************************************************************
+Befehl zum Compilen: export DEVKITPRO=/opt/devkitpro && sudo -E make -j6
+************************************************************************
+
+
 
 renderer.cpp:
 Komplett umschreiben (siehe updated_renderer)

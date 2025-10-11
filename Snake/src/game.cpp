@@ -59,7 +59,9 @@ void Game::run() {
 
 void Game::startup_sequence(){
     menu.show_startup();
+    bn::sound_items::button_press.play();
     delay(2);
+    loop_handle.stop();
     startup = false;
 }
 
@@ -114,12 +116,13 @@ void Game::wait_for_input(){
 
 void Game::run_menu(){
     menu.show_bg();
-                wait_for_input_menu();
-                menu.clear();
-                switch_game_state = INITIALIZE;
-                #ifdef DEBUG
-                switch_game_state = _DEBUG;
-                #endif
+    loop_music();
+    wait_for_input_menu();
+    menu.clear();
+    switch_game_state = INITIALIZE;
+    #ifdef DEBUG
+    switch_game_state = _DEBUG;
+    #endif
 }
 
 
@@ -142,29 +145,29 @@ void Game::initialize_game(){
 
 void Game::run_game(){
     controls.update_per_frame(player.get_direction());
-                DIRECTION eff_dir = controls.peek_effective_direction(player.get_direction());
-                SCANNER next_scan = player.check_next_position(game_map, eff_dir);
-                player.update(next_scan, controls);
+    DIRECTION eff_dir = controls.peek_effective_direction(player.get_direction());
+    SCANNER next_scan = player.check_next_position(game_map, eff_dir);
+    player.update(next_scan, controls);
 
-                SCANNER current_scanner = player.front_scanner(game_map, switch_game_state, player.get_snake_body());
+    SCANNER current_scanner = player.front_scanner(game_map, switch_game_state, player.get_snake_body());
 
-                update_map(game_map, 0, player.get_snake_body());
+    update_map(game_map, 0, player.get_snake_body());
 
-                renderer.draw_map(game_map);
-                renderer.update_score(player.get_snake_body().size());
+    renderer.draw_map(game_map);
+    renderer.update_score(player.get_snake_body().size());
 
-                if (bn::keypad::select_held() || current_scanner == BORDER || current_scanner == PLAYER) {
-                    switch_game_state = STOP;
-                }
+    if (bn::keypad::select_held() || current_scanner == BORDER || current_scanner == PLAYER) {
+        switch_game_state = STOP;
+    }
 
-                bn::core::update();
+    bn::core::update();
 
-                //renderer.map_renderer(game_map, 1, renderer.squares, basic);
-                //renderer.update_score(player.get_snake_body().size());
+    //renderer.map_renderer(game_map, 1, renderer.squares, basic);
+    //renderer.update_score(player.get_snake_body().size());
 
-                /* Temporär. Danach Game Over state programmieren */
+    /* Temporär. Danach Game Over state programmieren */
 
-                //if (bn::keypad::start_held()) {player.pause();}
+    //if (bn::keypad::start_held()) {player.pause();}
 }
 
 void Game::stop_game(){

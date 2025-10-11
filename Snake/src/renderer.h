@@ -29,20 +29,17 @@ public:
     Renderer();
     ~Renderer();
 
-    // Theme anwenden (schaltet Zeile im Tileset um)
     void apply_theme(theme& current, theme new_theme);
 
     void adjust_scaler(int& scaler, int mul);
     void update_score(int score_value);
     void clear_sprites();
 
-    // rendert strikt: erst löschen, dann aus Map zeichnen
     void draw_map(Map& map);
 
-    // komplette 32x32-Map in Background-Tile der aktuellen Theme-Zeile löschen
     void clear_all_tiles();
 
-    void render(); // optionaler per-Frame-Hook
+    void render();
 
     void hide_bg();
     void show_bg();
