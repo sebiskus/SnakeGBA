@@ -18,7 +18,7 @@ private:
     bn::sprite_text_generator _tg{common::variable_8x16_sprite_font};
     bn::sprite_text_generator _tg_small{common::variable_8x8_sprite_font};
     
-    bn::vector<bn::sprite_ptr, 16> _startup_sprites;
+    bn::vector<bn::sprite_ptr, 32> _startup_sprites;
     bn::vector<bn::sprite_ptr, 32> _menu_sprites;
     bn::vector<bn::sprite_ptr, 32> _menu_sprites_theme;
 
