@@ -12,6 +12,7 @@
 #include "color_palette.h"
 #include "graphics.h"
 
+/* Padding hinzufügen zwischen Map und Text */
 constexpr int offset_x_text = -100;
 constexpr int offset_x_map   = 30;
 
@@ -22,28 +23,28 @@ private:
     bn::vector<bn::sprite_ptr, 64> ui_sprites;
 
 public:
-    int   renderer_scaler = 1;
-    theme current_theme   = basic; //default
-    bn::color color       = bn::color(16, 16, 16);
+    theme current_theme = basic; //default
+    bn::color color = bn::color(16, 16, 16);
 
     Renderer();
     ~Renderer();
 
+    /* Score-Text renderer */
+    void update_score(int score_value);
+
+    /* Theme wechseln */
     void apply_theme(theme& current, theme new_theme);
 
-    void adjust_scaler(int& scaler, int mul);
-    void update_score(int score_value);
-    void clear_sprites();
-
     void draw_map(Map& map);
-
-    void clear_all_tiles();
 
     void render();
 
     void hide_bg();
     void show_bg();
     void shutdown_bg();
+
+    void clear_sprites();
+    void clear_all_tiles();
 
 };
 

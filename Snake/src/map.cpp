@@ -12,6 +12,7 @@
 
 spawn current_apple_location;
 bool apple_exists = false;
+
 bn::seed_random global_random; // Globaler Random-Generator mit Seed
 bool random_initialized = false; // Flag für Initialisierung
 

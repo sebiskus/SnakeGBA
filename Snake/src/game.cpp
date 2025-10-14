@@ -26,12 +26,12 @@ void Game::run() {
             initialize_game();
             break;
         }
-            case MENU: { //Menü darstellen
+            case MENU: {
                 run_menu();
                 break;
             }
 
-            case STOP: { //Spielabbruch durchführen => alles resetten
+            case STOP: {
                 stop_game();
                 break;
             }
@@ -134,6 +134,7 @@ void Game::initialize_game(){
     controls.clear();
     Map& game_map = selectMap(0);
     player.start(speed, game_map);
+
     // einmal initial rendern
     renderer.apply_theme(renderer.current_theme, current_theme);
     renderer.show_bg();           
@@ -144,8 +145,10 @@ void Game::initialize_game(){
 }
 
 void Game::run_game(){
+
     controls.update_per_frame(player.get_direction());
     DIRECTION eff_dir = controls.peek_effective_direction(player.get_direction());
+
     SCANNER next_scan = player.check_next_position(game_map, eff_dir);
     player.update(next_scan, controls);
 
@@ -161,11 +164,6 @@ void Game::run_game(){
     }
 
     bn::core::update();
-
-    //renderer.map_renderer(game_map, 1, renderer.squares, basic);
-    //renderer.update_score(player.get_snake_body().size());
-
-    /* Temporär. Danach Game Over state programmieren */
 
     //if (bn::keypad::start_held()) {player.pause();}
 }

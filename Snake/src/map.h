@@ -19,8 +19,6 @@ struct spawn {
     int y;
 };
 
-
-
 enum TileType {
         FLOOR_TILE = 0,
         WALL_TILE = 1,

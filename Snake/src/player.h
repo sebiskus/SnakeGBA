@@ -64,16 +64,13 @@ public:
 
     void movement(SCANNER scanner);
     void update_position(int dx, int dy, SCANNER scanner);
-    void update_snake_body(bn::vector<pos, 200>& snake_body);
-
-    void pause();
+    
     const bn::vector<pos, 200>& get_snake_body() const { return snake_body; }
 
     void reset_player(Player& player) {
         player = Player();
     };
 
-    // Neu: Getter, damit Game/Controls den aktuellen Kurs kennen
     DIRECTION get_direction() const { return direction; }
 
 

@@ -14,7 +14,7 @@ public:
 private:
     bool _has_pending = false;
     DIRECTION _pending = RIGHT;
-    static bool _is_opposite(DIRECTION a, DIRECTION b);
+    static bool _is_opposite(DIRECTION a, DIRECTION b); //damit Snake nicht zurückgehen kann
 };
 
 #endif

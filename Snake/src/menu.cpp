@@ -16,7 +16,7 @@ void Menu::show_startup() {
     _tg.generate(-120, -30, "by @sebiskus", _startup_sprites);
     _tg.generate(-120, -18, "made with Butano", _startup_sprites);
 
-    _tg.generate(-120, 14, "Support both projects with a coffee!", _startup_sprites);
+    //_tg.generate(-120, 14, "Support both projects with a coffee!", _startup_sprites);
 
     _tg_small.generate(-100, 68, build, _startup_sprites);
 }

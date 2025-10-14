@@ -11,6 +11,14 @@ player.cpp:
 - Steuerung überarbeiten. Soll bereits vorher Button Presses checken und temporär abspeichern
 
 
+Bug fixes:
+- Speed Geschwindigkeit nur noch die Hälfte. Doppelte frame times prüfen
+- Seed fixen
+- Hintergrund ist pink (auch wenn`s cool ist)
+- Musik fixen
+- Speicher System programmieren + Highscores
+
+- Info in bn::info verlagern
 
 
 

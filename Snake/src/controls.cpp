@@ -1,9 +1,9 @@
 #include "controls.h"
 
-static inline bool is_pressed_up()    { return bn::keypad::up_held(); }
-static inline bool is_pressed_down()  { return bn::keypad::down_held(); }
-static inline bool is_pressed_left()  { return bn::keypad::left_held(); }
-static inline bool is_pressed_right() { return bn::keypad::right_held(); }
+static bool is_pressed_up()    { return bn::keypad::up_held(); }
+static bool is_pressed_down()  { return bn::keypad::down_held(); }
+static bool is_pressed_left()  { return bn::keypad::left_held(); }
+static bool is_pressed_right() { return bn::keypad::right_held(); }
 
 bool Controls::_is_opposite(DIRECTION a, DIRECTION b) {
     return (a == UP && b == DOWN) || (a == DOWN && b == UP) ||

@@ -19,6 +19,7 @@ struct theme {
    // rgb wall;
    // rgb snake;
    // rgb apple;
+   
     int id;
     rgb background;
     rgb font;

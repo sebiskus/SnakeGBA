@@ -13,9 +13,9 @@
 #include "controls.h"
 #include "color_palette.h"
 
-#include "bn_sound.h"           // für bn::sound::play(...)
+#include "bn_sound.h"          
 #include "bn_sound_items.h"
-#include "bn_optional.h"        // optionaler Handle-Speicher
+#include "bn_optional.h"        
 
 #include "bn_sound_items.h"
 
@@ -36,7 +36,7 @@ class Game {
     Controls controls;
 
     bool startup;
-    unsigned int speed; //damit es nicht negativ wird
+    unsigned int speed;
     unsigned int theme_id;
 
 

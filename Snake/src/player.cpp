@@ -97,7 +97,7 @@ SCANNER Player::check_next_position(Map& map, DIRECTION dir) {
     }
     
     // Prüfe Grenzen BEVOR auf map zugegriffen wird
-    //TODO: x_size und y_size benutzen bei if
+    //TODO: x_size und y_size von Map benutzen bei letzten 2 Bedingungen
     if(temp_x < 0 || temp_y < 0 || temp_x >= 16 || temp_y >= 10) {
         return SCANNER::BORDER;
     }
@@ -120,8 +120,7 @@ SCANNER Player::check_next_position(Map& map, DIRECTION dir) {
     return SCANNER::SAFE_AREA;
 }
 
-    void Player::movement(SCANNER scanner){
-
+void Player::movement(SCANNER scanner){
         switch(direction) {
             case UP:
                 update_position(0, -1, scanner);
@@ -137,15 +136,15 @@ SCANNER Player::check_next_position(Map& map, DIRECTION dir) {
                 break;
             default:
                 break;
-            }
-    }
+         }
+}
 
+/* Hier wird die Snake Länge aktualisiert */
 void Player::update_position(int dx, int dy, SCANNER scanner) {
     if(snake_body.size() == 0) return;
     
     pos new_head = {snake_body[0].x + dx, snake_body[0].y + dy};
     
-    // Apfel-Check komplett außerhalb des Scanners
     extern spawn current_apple_location;
     extern bool apple_exists;
     
@@ -153,11 +152,11 @@ void Player::update_position(int dx, int dy, SCANNER scanner) {
        new_head.x == current_apple_location.x && 
        new_head.y == current_apple_location.y) {
         
-        // Tail duplizieren (Wachstum)
+        // Tail duplizieren für Wachstum
         pos tail = snake_body[snake_body.size() - 1];
         snake_body.push_back(tail);
         
-        // Apfel sofort löschen
+        // Apfel löschen
         apple_exists = false;
         
         this->length = snake_body.size();
@@ -169,32 +168,5 @@ void Player::update_position(int dx, int dy, SCANNER scanner) {
     }
     snake_body[0] = new_head;
 }
-
-
-
-
-
-
-
-    void Player::update_snake_body(bn::vector<pos, 200>& snake_body){
-        /*
-        TODO:
-        Wird vom Scanner gecallt. snake_body Ende wird temporär gesichert
-        und wird am Ende von update_position() eingefügt
-        */
-    }
-
-
-    void Player::pause(){
-        /*
-        *WHILE Pause = true
-        *speed ist auf 0 gesetzt und wird dann aus temp wieder übernommen
-        *direction bleibt gleich
-        *Vielleicht aber auch einfach mit game_update() lösen? Solange !start(){} passiert nix, also kein game_update()
-        */
-
-        speed = 0;
-    }
-
 
 Player::~Player(){}
