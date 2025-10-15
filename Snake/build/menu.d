@@ -59,9 +59,11 @@ menu.o: /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu.cpp \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_item.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/include/common_variable_8x16_sprite_font.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_common_variable_8x16_font.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/sound.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sound.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sound_handle.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sound_items.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sound_item.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sound_handle.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_square.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_wall_square.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_snake_square.h \
@@ -82,9 +84,6 @@ menu.o: /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu.cpp \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_tiles_items_buttons.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles_item.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_shape_size.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu_button.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles_ptr.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/text.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/color_palette.h
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu.h:
@@ -147,9 +146,11 @@ menu.o: /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu.cpp \
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_item.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/include/common_variable_8x16_sprite_font.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_common_variable_8x16_font.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/sound.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sound.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sound_handle.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sound_items.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sound_item.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sound_handle.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_square.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_wall_square.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_snake_square.h:
@@ -170,8 +171,5 @@ menu.o: /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu.cpp \
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_tiles_items_buttons.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles_item.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_shape_size.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu_button.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles_ptr.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/text.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/color_palette.h:

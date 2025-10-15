@@ -4,17 +4,13 @@ Game::Game(){
     this->speed = 2;
     this->startup = true;
     this->theme_id = 0;
+    this->loop_handle = &menu_music;
     renderer.hide_bg();
 }
 
 void Game::run() {
-    bn::core::update();
-    current_game_state = switch_game_state;
 
-    #ifdef DEBUG
-    startup = false;
-    BN_LOG("Current game state: ", switch_game_state);
-    #endif
+    current_game_state = switch_game_state;
 
     while (startup) { 
         startup_sequence();
@@ -22,34 +18,32 @@ void Game::run() {
     }
 
     switch(current_game_state) {
-        case INITIALIZE: { //Hier wird die Runde initialisiert
+        case INITIALIZE: {       //Hier wird die Runde initialisiert
             initialize_game();
             break;
         }
-            case MENU: {
-                run_menu();
-                break;
-            }
-
-            case STOP: {
-                stop_game();
-                break;
-            }
-
-            case RUNNING: {
-                run_game();
-                break;
-                }
-
-        case PAUSE: {
+        case MENU: {
+            run_menu();
             break;
         }
-        case _DEBUG: {
+        case STOP: {
+            stop_game();
+            break;
+        }
+        case RUNNING: {
+            run_game();
+            break;
+        }
+        case PAUSE: {           //TODO
+            break;
+        }
+        case _DEBUG: {          //optional zum Debuggen
             break;
         }
         default:
             break;
     }
+    bn::core::update();
 }
 
 
@@ -61,7 +55,7 @@ void Game::startup_sequence(){
     menu.show_startup();
     bn::sound_items::button_press.play();
     delay(2);
-    loop_handle.stop();
+    loop_handle->stop();
     startup = false;
 }
 
@@ -96,7 +90,7 @@ void Game::adjust_theme_id(){
 
 void Game::wait_for_input_menu(){
     while(!bn::keypad::a_pressed()){
-        loop_music();
+        loop_music(loop_handle);
         adjust_speed();
         adjust_theme_id();
         current_theme = switch_theme(theme_id);
@@ -116,7 +110,7 @@ void Game::wait_for_input(){
 
 void Game::run_menu(){
     menu.show_bg();
-    loop_music();
+    loop_music(loop_handle);
     wait_for_input_menu();
     menu.clear();
     switch_game_state = INITIALIZE;
@@ -129,7 +123,7 @@ void Game::run_menu(){
 void Game::initialize_game(){
     initialize_random_seed(); // Seed beim Spielstart initialisieren
 
-    loop_handle.stop();
+    loop_handle->stop();
             
     controls.clear();
     Map& game_map = selectMap(0);
@@ -176,4 +170,11 @@ void Game::stop_game(){
     switch_game_state = MENU;
     reset_speed();
     Map& game_map = selectMap(0);
+}
+
+void run_debug(){
+    #ifdef DEBUG
+    startup = false;
+    BN_LOG("Current game state: ", switch_game_state);
+    #endif
 }

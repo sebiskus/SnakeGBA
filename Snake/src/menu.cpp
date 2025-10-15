@@ -9,22 +9,23 @@ void Menu::show_bg() {
     _snake_sprite->set_scale(1.6);        // 70% Größe
     _snake_sprite->set_z_order(-10);      // Ganz vorne
     _snake_sprite->put_above();           // Über allem anderen
+
+    _bg->set_priority(3);
 }
 
 void Menu::show_startup() {
     _startup_sprites.clear();
-    _tg.generate(-120, -30, "by @sebiskus", _startup_sprites);
-    _tg.generate(-120, -18, "made with Butano", _startup_sprites);
+    _tg.generate(-120, -20, "by @sebiskus", _startup_sprites);
+    _tg.generate(-120, -8, "made with Butano", _startup_sprites);
 
     //_tg.generate(-120, 14, "Support both projects with a coffee!", _startup_sprites);
 
-    _tg_small.generate(-100, 68, build, _startup_sprites);
+    _tg_small.generate(-120, 68, build, _startup_sprites);
 }
 
 
 // Hauptmenü
 void Menu::show_menu(int speed, bn::string<20> theme_name) {
-    Button button;
     clear_sprites(); // Sprites zurücksetzen vor neuer Erstellung
     
     _tg.generate(-96, -28, game_title, _menu_sprites);
@@ -50,9 +51,7 @@ void Menu::show_menu(int speed, bn::string<20> theme_name) {
 
 void Menu::update() {
     if(_bg) {
-        _bg->set_priority(3);
-        // Kontinuierliches Scrolling nach rechts
-        // Bei 256x256 loopt es automatisch
+        // background loopt nach rechts nach rechts
         _bg->set_x(_bg->x() + 0.4);
     }
 }

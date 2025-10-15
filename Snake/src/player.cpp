@@ -63,10 +63,10 @@ SCANNER Player::front_scanner(Map& map, GAME_STATE switch_game_state, const bn::
     
     // Map-Wert der aktuellen Position prüfen
     if(map[current_y][current_x] == 1) {
-        bn::sound_items::game_over.play();
+        play_sound(GAME_OVER);
         return SCANNER::BORDER;
     } else if(map[current_y][current_x] == 3) {
-        bn::sound_items::snake_eating.play();
+        play_sound(SNAKE_EATING);
         return SCANNER::APPLE;
     }
     
@@ -168,5 +168,6 @@ void Player::update_position(int dx, int dy, SCANNER scanner) {
     }
     snake_body[0] = new_head;
 }
+
 
 Player::~Player(){}

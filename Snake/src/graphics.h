@@ -7,8 +7,7 @@
 #include "common_variable_8x16_sprite_font.h"
 
 //audio
-#include "bn_sound_items.h"
-
+#include "sound.h"
 
 
 //used in 'renderer.h'

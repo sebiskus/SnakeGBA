@@ -3,6 +3,7 @@
 
 #include "bn_core.h"
 #include "bn_log.h"
+#include "bn_optional.h"
 
 #include "player.h"
 #include "map.h"
@@ -13,11 +14,7 @@
 #include "controls.h"
 #include "color_palette.h"
 
-#include "bn_sound.h"          
-#include "bn_sound_items.h"
-#include "bn_optional.h"        
-
-#include "bn_sound_items.h"
+#include "graphics.h" //globale Header File mit allen Grafiken und so        
 
 #include "bn_display.h"
 #include "bn_sprite_ptr.h"
@@ -26,7 +23,6 @@
 #include "bn_sprite_font.h"
 #include "bn_sprite_text_generator.h" //generiert Text aus der gegebenen sprite_font
 
-#include "common_variable_8x16_sprite_font.h"
 
 class Game {
     Player player;
@@ -46,7 +42,9 @@ class Game {
     GAME_STATE current_game_state = MENU;
     GAME_STATE switch_game_state = MENU;
 
-    bn::sound_handle loop_handle = bn::sound::play(bn::sound_items::menu_music, 0);
+    bn::sound_handle menu_music = bn::sound::play(bn::sound_items::menu_music, 0);
+
+    [[nodiscard]] bn::sound_handle *loop_handle; //hier machen glaub Pointer keinen Sinn...
 
     Game();
 
@@ -74,11 +72,8 @@ class Game {
     void reset_speed() {speed = 2;};
     void decrease_speed() {speed--;};
 
-    void loop_music(){
-        if(!loop_handle.active()) {                                  
-                    loop_handle = bn::sound::play(bn::sound_items::menu_music, 1);
-                }
-    }
+    void run_debug();
+
 };
 
 #endif

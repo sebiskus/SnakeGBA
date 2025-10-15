@@ -7,6 +7,7 @@
 
 #include "game_state.h"
 #include "direction.h"   
+#include "graphics.h"
 
 
 class Controls;
@@ -70,6 +71,10 @@ public:
     void reset_player(Player& player) {
         player = Player();
     };
+
+    
+
+
 
     DIRECTION get_direction() const { return direction; }
 
