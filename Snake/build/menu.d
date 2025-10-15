@@ -84,6 +84,9 @@ menu.o: /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu.cpp \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_tiles_items_buttons.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles_item.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_shape_size.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu_button.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles_ptr.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/text.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/color_palette.h
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu.h:
@@ -171,5 +174,8 @@ menu.o: /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu.cpp \
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_tiles_items_buttons.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles_item.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_shape_size.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu_button.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles_ptr.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/text.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/color_palette.h:

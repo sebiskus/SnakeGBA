@@ -105,6 +105,9 @@ game.o: /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/game.cpp \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_string.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_affine_bg_ptr.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu_button.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles_ptr.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/controls.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_display.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/../hw/include/bn_hw_display_constants.h \
@@ -215,6 +218,9 @@ game.o: /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/game.cpp \
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_string.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_affine_bg_ptr.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu_button.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles_ptr.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/controls.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_display.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/../hw/include/bn_hw_display_constants.h:
