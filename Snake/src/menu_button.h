@@ -2,6 +2,7 @@
 #define MENU_BUTTON_H
 
 #include "bn_vector.h"
+#include "bn_array.h"
 #include "bn_optional.h"
 
 #include "bn_sprite_tiles.h"
@@ -43,19 +44,28 @@ Es gibt einen globalen Zeiger focus_pointer. Seine Start-Position wird bei jedem
 typedef struct {
     _pos button_id;                 //ist die x|y Position, allerdings simpler. statt sowas wie -100|0 => 0|2
     _pos button_position;           
-    int size;                       //Größe von dem Button
+    int size;                       //Größe von dem Button, 1 = Default
     char button_label[16];   
     SCENE signal;                   //führt die jeweilige Aktion aus
-    bool isFocussed;                //Ändert sein Sprite
+    bool isFocused;                //Ändert sein Sprite
 
 } Button;
 
 extern _pos focus_pointer;
-extern Button *currently_focussed_button;
+extern Button *currently_focused_button;
 extern bn::vector<Button, 10> buttons;
 
-bool is_button_focussed(_pos focus_pointer); //oder set_focus() für void
+//extern bn::vector<bn::sprite_ptr, 10> button_sprites; 
 
+
+
+
+
+
+
+bool is_button_focused(_pos focus_pointer); //oder set_focus() für void
+
+//Wird benutzt um eigene Buttons zu erstellen, unabhängig von Szene
 void create_button(
     _pos button_id,
     _pos button_position,           
@@ -64,8 +74,27 @@ void create_button(
     SCENE signal
     );
 
+//Buttons aus menu_scenes implementieren 
+void insert_button(Button button_scene[], int button_count);
+
 void display_button();
 void clear_buttons();
+
+
+/* Alles bzgl. focus pointer */
+
+void reset_focus();
+void move_focus(int x, int y); //x|y = -1|0 => left; 1|0 => right; 0|1 => down; 0|-1 => up
+
+void update_button_states(); //focused button updaten und sein isFocused switchen
+
+/* 
+Display Button:
+> update_button_states() abrufen
+> 
+> Text von char in String konvertieren
+*/
+void display_button();
 
 
 #endif

@@ -1,0 +1,1 @@
+credits_picture_bn_gfx.o: credits_picture_bn_gfx.s

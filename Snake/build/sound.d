@@ -12,7 +12,28 @@ sound.o: /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/sound.cpp \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_alignment.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_type_traits.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sound_items.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sound_item.h
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sound_item.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/debug.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_core.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_span.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_array.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_assert.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_config_assert.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_version.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_config_doxygen.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sstream.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_string_fwd.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_istring_base.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_assert_callback_type.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_utility.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_iterator.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_array_fwd.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_span_fwd.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_optional.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_memory_alias.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_string_view.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_vblank_callback_type.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_keypad.h
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/sound.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sound.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sound_handle.h:
@@ -27,3 +48,24 @@ sound.o: /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/sound.cpp \
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_type_traits.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sound_items.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sound_item.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/debug.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_core.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_span.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_array.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_assert.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_config_assert.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_version.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_config_doxygen.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sstream.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_string_fwd.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_istring_base.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_assert_callback_type.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_utility.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_iterator.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_array_fwd.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_span_fwd.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_optional.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_memory_alias.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_string_view.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_vblank_callback_type.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_keypad.h:

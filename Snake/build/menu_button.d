@@ -20,13 +20,14 @@ menu_button.o: \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_utility.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_iterator.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_vector_fwd.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_array.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_array_fwd.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_optional.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_memory_alias.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles_item.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_span.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_array.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_array_fwd.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_span_fwd.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_tile.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_bpp_mode.h \
@@ -53,13 +54,14 @@ menu_button.o: \
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_utility.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_iterator.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_vector_fwd.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_array.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_array_fwd.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_optional.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_memory_alias.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles_item.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_span.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_array.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_array_fwd.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_span_fwd.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_tile.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_bpp_mode.h:

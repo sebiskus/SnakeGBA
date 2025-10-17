@@ -4,6 +4,8 @@
 #include "bn_sound.h"
 #include "bn_sound_items.h"
 
+#include "debug.h"
+
 enum SOUND_EFFECT {
     BUTTON_PRESS,
     GAME_OVER,

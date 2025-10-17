@@ -10,6 +10,11 @@ Game::Game(){
 
 void Game::run() {
 
+    #ifdef DEBUG
+    startup = false;
+    BN_LOG("Current game state: ", switch_game_state);
+    #endif
+
     current_game_state = switch_game_state;
 
     while (startup) { 
@@ -38,6 +43,8 @@ void Game::run() {
             break;
         }
         case _DEBUG: {          //optional zum Debuggen
+            //switched nach a drücken hierhin
+            run_game();
             break;
         }
         default:
@@ -52,7 +59,7 @@ void Game::run() {
 /* Hilfsfunktionen für Game::run(); */
 
 void Game::startup_sequence(){
-    menu.show_startup();
+    menu.scene_startup();
     bn::sound_items::button_press.play();
     delay(2);
     loop_handle->stop();
@@ -88,24 +95,35 @@ void Game::adjust_theme_id(){
     }
 }
 
+/*
+if it ain't broke don't fix it :)
+*/
 void Game::wait_for_input_menu(){
-    while(!bn::keypad::a_pressed()){
+    if (scene::intro == true) {
+        while(!bn::keypad::a_pressed()){
+        loop_music(loop_handle);
+        menu.scene_menu_intro();
+        menu.update();
+        bn::core::update();
+        }
+    }
+    bn::sound_items::start.play();
+    scene::intro = false;
+    
+    while(!bn::keypad::start_pressed()){
         loop_music(loop_handle);
         adjust_speed();
         adjust_theme_id();
         current_theme = switch_theme(theme_id);
         bn::string<20> theme_name = get_theme_name(theme_id);
-        menu.show_menu(speed, theme_name);
+
+        //menu.scene_menu_intro();
+        menu.scene_menu_main(speed, theme_name);
+
         menu.update();
         bn::core::update();
     }
     bn::sound_items::start.play();
-}
-
-void Game::wait_for_input(){
-    while(!bn::keypad::b_pressed()){
-        bn::core::update();
-    }
 }
 
 void Game::run_menu(){
@@ -170,11 +188,4 @@ void Game::stop_game(){
     switch_game_state = MENU;
     reset_speed();
     Map& game_map = selectMap(0);
-}
-
-void run_debug(){
-    #ifdef DEBUG
-    startup = false;
-    BN_LOG("Current game state: ", switch_game_state);
-    #endif
 }

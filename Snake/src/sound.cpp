@@ -18,7 +18,9 @@ void play_sound(SOUND_EFFECT sound_effect) {
 }
 
 void loop_music(bn::sound_handle *loop_handle){
+    #ifndef DEBUG //damit mir die Musik beim Debuggen nicht auf die Nerven geht :)
         if(!(*loop_handle).active()) {                                  
                     *loop_handle = bn::sound::play(bn::sound_items::menu_music, 1);
                 }
-    }
+    #endif
+}

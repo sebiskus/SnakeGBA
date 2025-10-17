@@ -11,4 +11,11 @@ void create_button(
         buttons.push_back(button);
     }
 
+void insert_button(Button button_scene[], int button_count) {
+    for (int i = 0; i < button_count; i++) {
+        buttons.push_back(button_scene[i]);
+    }
+}
+
+
 void clear_buttons() { buttons.clear(); }

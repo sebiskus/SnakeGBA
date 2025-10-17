@@ -2,71 +2,96 @@
 #include "text.h"
 #include "color_palette.h"
 
-
 void Menu::show_bg() {
-    _bg = bn::affine_bg_items::game_bg.create_bg(0, 0);
-    _snake_sprite = bn::sprite_items::snake_artwork.create_sprite(100, -50);
-    _snake_sprite->set_scale(1.6);        // 70% Größe
-    _snake_sprite->set_z_order(-10);      // Ganz vorne
-    _snake_sprite->put_above();           // Über allem anderen
-
-    _bg->set_priority(3);
+    bg = bn::affine_bg_items::game_bg.create_bg(0, 0);
+    bg->set_priority(3);
 }
 
-void Menu::show_startup() {
-    _startup_sprites.clear();
-    _tg.generate(-120, -20, "by @sebiskus", _startup_sprites);
-    _tg.generate(-120, -8, "made with Butano", _startup_sprites);
-
-    //_tg.generate(-120, 14, "Support both projects with a coffee!", _startup_sprites);
-
-    _tg_small.generate(-120, 68, build, _startup_sprites);
+void Menu::show_snake() {
+    snake_sprite = bn::sprite_items::snake_artwork.create_sprite(100, -50);
+    snake_sprite->set_scale(1.6);        // 70% Größe
+    snake_sprite->set_z_order(-10);      // Ganz vorne
+    snake_sprite->put_above();           // Über allem anderen
 }
 
+/* Menu Szenen */
 
+void Menu::scene_startup() {
+    startup_sprites.clear();
+    tg.generate(-100, -20, "by @sebiskus", startup_sprites);
+    tg.generate(-100, -8, "made with Butano", startup_sprites);
+
+    //_tg.generate(-100, 14, "Support both projects with a coffee!", _startup_sprites);
+
+    tg_small.generate(-100, 68, build, startup_sprites);
+}
+
+void Menu::scene_menu_intro() {
+    clear_sprites();
+    show_snake();
+    tg.generate(-96, 0, game_title, menu_sprites);
+    tg.generate(-96, 20, "(Press a button)", menu_sprites);
+}
+
+#ifndef DEBUG
 // Hauptmenü
-void Menu::show_menu(int speed, bn::string<20> theme_name) {
+void Menu::scene_menu_main(int speed, bn::string<20> theme_name) {
     clear_sprites(); // Sprites zurücksetzen vor neuer Erstellung
     
-    _tg.generate(-96, -28, game_title, _menu_sprites);
-    _tg_small.generate(-96, -8, "(Press A to start)", _menu_sprites);
-    _tg_small.generate(-96, 12, "left/right: switch theme", _menu_sprites);
-    _tg_small.generate(-96, 22, "up/down: adjust speed", _menu_sprites);
-    _tg_small.generate(-96, 32, "select:  reset speed", _menu_sprites);
+    tg.generate(-96, -28, "MENU", menu_sprites);
+    tg_small.generate(-96, 8, "(Press START to start the game)", menu_sprites);
+    tg_small.generate(-96, 22, "left/right: switch theme", menu_sprites);
+    tg_small.generate(-96, 32, "up/down: adjust speed", menu_sprites);
+    tg_small.generate(-96, 42, "select:  reset speed", menu_sprites);
 
     
     // Speed-Text 
     bn::string<32> speed_text;
     bn::ostringstream string_stream(speed_text);
     string_stream << "current speed: " << speed;
-    _tg_small.generate(-96, 72, speed_text, _menu_sprites);
+    tg_small.generate(-96, 72, speed_text, menu_sprites);
 
     bn::string<52> theme_text;
     bn::ostringstream string_stream_theme(theme_text);
 
     string_stream_theme << "theme: " << theme_name;
-    _tg_small.generate(-96, 62, theme_text, _menu_sprites_theme);
+    tg_small.generate(-96, 62, theme_text, menu_sprites_theme);
+
+    show_snake();
+}
+#endif
+
+#ifdef DEBUG
+void Menu::scene_menu_main(int speed, bn::string<20> theme_name) {
+    clear_sprites(); // Sprites zurücksetzen vor neuer Erstellung
+    
+    _tg.generate(-96, -28, game_title, menu_sprites);
+    tg_small.generate(-96, -8, "DEBUG (Press A to start)", menu_sprites);
 
 }
+#endif
 
 void Menu::update() {
-    if(_bg) {
+    if(bg) {
         // background loopt nach rechts nach rechts
-        _bg->set_x(_bg->x() + 0.4);
+        bg->set_x(bg->x() + 0.4);
     }
 }
-
 
 
 // Gesamtes Menü resetten
 void Menu::clear() {
     clear_sprites();
-    _bg.reset();
-    _snake_sprite.reset();
+    bg.reset();
+    snake_sprite.reset();
 }
 // Nur Sprites resetten
 void Menu::clear_sprites() {
-    _menu_sprites_theme.clear();
-    _menu_sprites.clear();
-    _startup_sprites.clear();
+    menu_sprites_theme.clear();
+    menu_sprites.clear();
+    startup_sprites.clear();
 }
+
+void Menu::credits_test() {
+        credits_picture = bn::regular_bg_items::credits_picture.create_bg(0,0);
+    }

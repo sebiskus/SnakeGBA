@@ -14,7 +14,8 @@
 #include "controls.h"
 #include "color_palette.h"
 
-#include "graphics.h" //globale Header File mit allen Grafiken und so        
+#include "graphics.h" //globale Header File mit allen Grafiken und so      
+#include "debug.h"  
 
 #include "bn_display.h"
 #include "bn_sprite_ptr.h"
@@ -32,8 +33,7 @@ class Game {
     Controls controls;
 
     bool startup;
-    unsigned int speed;
-    unsigned int theme_id;
+    
 
 
     public:
@@ -42,9 +42,12 @@ class Game {
     GAME_STATE current_game_state = MENU;
     GAME_STATE switch_game_state = MENU;
 
+    unsigned int speed;
+    unsigned int theme_id;
+
     bn::sound_handle menu_music = bn::sound::play(bn::sound_items::menu_music, 0);
 
-    [[nodiscard]] bn::sound_handle *loop_handle; //hier machen glaub Pointer keinen Sinn...
+    bn::sound_handle *loop_handle; //hier machen glaub Pointer keinen Sinn... und vllt bn::optional<>
 
     Game();
 
@@ -60,7 +63,6 @@ class Game {
     /*delay time in seconds. */
     void delay(double time);
     void wait_for_input_menu();
-    void wait_for_input();
 
     void timer();
 
