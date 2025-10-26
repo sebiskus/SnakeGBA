@@ -1,4 +1,4 @@
-## Snake GBA
+## SnakeGBA
 
 ************************************************************************
 Befehl zum Compilen: export DEVKITPRO=/opt/devkitpro && sudo -E make -j6
