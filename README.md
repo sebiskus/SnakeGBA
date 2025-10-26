@@ -1,5 +1,6 @@
 ## SnakeGBA
-<img width="256" height="256" alt="logo" src="https://github.com/user-attachments/assets/4295452a-cf56-4b14-a621-6adaad339ab2" />
+
+<img width="1000" height="400" alt="Logo-GitHub" src="https://github.com/user-attachments/assets/e21a1461-b89b-47b9-ab68-1713a87bb5f6" />
 
 ************************************************************************
 Befehl zum Compilen: export DEVKITPRO=/opt/devkitpro && sudo -E make -j6
