@@ -1,3 +1,5 @@
+<img width="256" height="256" alt="logo" src="https://github.com/user-attachments/assets/4295452a-cf56-4b14-a621-6adaad339ab2" />
+
 ## SnakeGBA
 
 ************************************************************************
