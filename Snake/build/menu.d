@@ -54,6 +54,10 @@ menu.o: /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu.cpp \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_optional.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sstream.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_string.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_math.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sin_lut.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_reciprocal_lut.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_rule_of_three_approximation.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/graphics.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/include/common_variable_8x8_sprite_font.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_font.h \
@@ -69,10 +73,6 @@ menu.o: /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu.cpp \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sound_item.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_affine_bg_ptr.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_ptr.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_square.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_wall_square.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_snake_square.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_apple_square.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_regular_bg_tiles_items_themes.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_tiles_item.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_bg_palette_item.h \
@@ -84,6 +84,7 @@ menu.o: /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu.cpp \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_size.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_affine_bg_map_cell.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_affine_bg_tiles_item.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_affine_bg_items_logo.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_snake_artwork.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_real_madrid.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_regular_bg_items_credits_picture.h \
@@ -156,6 +157,10 @@ menu.o: /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu.cpp \
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_optional.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sstream.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_string.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_math.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sin_lut.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_reciprocal_lut.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_rule_of_three_approximation.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/graphics.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/include/common_variable_8x8_sprite_font.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_font.h:
@@ -171,10 +176,6 @@ menu.o: /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu.cpp \
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sound_item.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_affine_bg_ptr.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_ptr.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_square.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_wall_square.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_snake_square.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_apple_square.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_regular_bg_tiles_items_themes.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_tiles_item.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_bg_palette_item.h:
@@ -186,6 +187,7 @@ menu.o: /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/menu.cpp \
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_size.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_affine_bg_map_cell.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_affine_bg_tiles_item.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_affine_bg_items_logo.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_snake_artwork.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_real_madrid.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_regular_bg_items_credits_picture.h:

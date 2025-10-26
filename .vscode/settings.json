@@ -65,6 +65,8 @@
     "__hash_table": "cpp",
     "forward_list": "cpp",
     "ios": "cpp",
-    "unordered_map": "cpp"
+    "unordered_map": "cpp",
+    "optional": "cpp",
+    "__node_handle": "cpp"
   }
 }

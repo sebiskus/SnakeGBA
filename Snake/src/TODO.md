@@ -2,13 +2,30 @@
 Befehl zum Compilen: export DEVKITPRO=/opt/devkitpro && sudo -E make -j6
 ************************************************************************
 
-
-
-renderer.cpp:
-Komplett umschreiben (siehe updated_renderer)
-
 player.cpp:
-- Steuerung überarbeiten. Soll bereits vorher Button Presses checken und temporär abspeichern
+- Steuerung simpler machen
+
+Menü:
+- Buttons implementieren inkl. Steuerung
+- Funktionen in anderen Menüs verlagern
+
+Score:
+- Score System implementieren 
+- Individuelle Nutzer
+    > Anfangs nur generische Namen implementieren (Player A, B, C)
+    > New, Duplicate, Delete user, Wipe everything
+    > Danach Tastatureingabe implementieren
+
+Style:
+- Animationen einstudieren mit Drehungen, Skalierungen
+- Matrizen nochmal anschauen
+- Neue Font implementieren
+
+Gameplay:
+- Ende einprogrammieren (Gewonnen)
+- Richtiges Pause Menü
+- 
+
 
 
 Bug fixes:

@@ -32,11 +32,19 @@ renderer.o: \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_vector.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_vector_fwd.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sstream.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_color.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_ptr.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_backdrop.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_optional.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_ptr.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_fixed_point.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_point.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_fixed_point_fwd.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_tiles_ptr.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_map_ptr.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_map_cell.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_map_cell_info.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_bg_palette_ptr.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_color.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_ptr.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_text_generator.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_vector.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_camera_ptr.h \
@@ -77,11 +85,6 @@ renderer.o: \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/debug.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_keypad.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_affine_bg_ptr.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_ptr.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_square.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_wall_square.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_snake_square.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_apple_square.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_regular_bg_tiles_items_themes.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_tiles_item.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_bg_palette_item.h \
@@ -93,22 +96,16 @@ renderer.o: \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_size.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_affine_bg_map_cell.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_affine_bg_tiles_item.h \
+ /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_affine_bg_items_logo.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_snake_artwork.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_real_madrid.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_regular_bg_items_credits_picture.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_item.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_map_item.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_map_cell.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_tiles_item.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_tiles_items_buttons.h \
  /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles_item.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_shape_size.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_backdrop.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_optional.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_tiles_ptr.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_map_ptr.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_map_cell_info.h \
- /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_bg_palette_ptr.h
+ /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_shape_size.h
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/renderer.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_core.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_span.h:
@@ -141,11 +138,19 @@ renderer.o: \
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_vector.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_vector_fwd.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sstream.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_color.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_ptr.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_backdrop.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_optional.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_ptr.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_fixed_point.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_point.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_fixed_point_fwd.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_tiles_ptr.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_map_ptr.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_map_cell.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_map_cell_info.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_bg_palette_ptr.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_color.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_ptr.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_text_generator.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_vector.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_camera_ptr.h:
@@ -186,11 +191,6 @@ renderer.o: \
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/src/debug.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_keypad.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_affine_bg_ptr.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_ptr.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_square.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_wall_square.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_snake_square.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_apple_square.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_regular_bg_tiles_items_themes.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_tiles_item.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_bg_palette_item.h:
@@ -202,19 +202,13 @@ renderer.o: \
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_size.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_affine_bg_map_cell.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_affine_bg_tiles_item.h:
+/Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_affine_bg_items_logo.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_snake_artwork.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_items_real_madrid.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_regular_bg_items_credits_picture.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_item.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_map_item.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_map_cell.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_tiles_item.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/Snake/build/bn_sprite_tiles_items_buttons.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_tiles_item.h:
 /Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_sprite_shape_size.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_backdrop.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_optional.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_tiles_ptr.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_map_ptr.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_regular_bg_map_cell_info.h:
-/Users/sebinski/Documents/GitHub/SnakeGBA/butano/include/bn_bg_palette_ptr.h:

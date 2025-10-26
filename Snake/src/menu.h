@@ -9,6 +9,7 @@
 #include "bn_optional.h"
 #include "bn_sstream.h"  // Für bn::ostringstream
 #include "bn_string.h"   // Für bn::string
+#include "bn_math.h"
 
 #include "graphics.h"
 #include "menu_button.h"
@@ -17,7 +18,8 @@
 
 class Menu {
 private:
-
+    int logo_rotation_val = 0;
+    bool flip_rotation;
     bn::sprite_text_generator tg{common::variable_8x16_sprite_font};
     bn::sprite_text_generator tg_small{common::variable_8x8_sprite_font};
     
@@ -27,6 +29,7 @@ private:
 
 
     bn::optional<bn::affine_bg_ptr> bg;
+    bn::optional<bn::affine_bg_ptr> logo;
     bn::optional<bn::regular_bg_ptr> credits_picture;
     bn::optional<bn::sprite_ptr> snake_sprite;  // Sprite für Snake Artwork
 
@@ -35,15 +38,22 @@ public:
     void initialize_menu();
 
     void show_bg();
+    void show_logo();
     
     void show_snake();
-    void rotate_snake(); //TODO
+
+    unsigned int rotation_val;
+    void rotate_logo();
+    unsigned int calculate_rotation_val();
+    void check_rotation_val();
 
 /*
 Szenen:
 /Boot
     /Menu
         /Intro (1x)
+        /create_user (1x, sofern undefiniert)
+        /select_user
             /Main
             /Themes
             /Leaderboard
@@ -66,6 +76,7 @@ Szenen:
     void update();
     void clear();           // Vollständiges Reset
     void clear_sprites();   // Nur Sprites zurücksetzen
+    void clear_logo();
     void credits_test();
 };
 

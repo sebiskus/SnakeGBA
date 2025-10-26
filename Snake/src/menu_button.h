@@ -5,6 +5,10 @@
 #include "bn_array.h"
 #include "bn_optional.h"
 
+#include "graphics.h"
+//#include "text.h"
+
+#include "bn_sprite_ptr.h"
 #include "bn_sprite_tiles.h"
 #include "bn_sprite_tiles_item.h"
 #include "bn_sprite_tiles_ptr.h"
@@ -55,7 +59,7 @@ extern _pos focus_pointer;
 extern Button *currently_focused_button;
 extern bn::vector<Button, 10> buttons;
 
-//extern bn::vector<bn::sprite_ptr, 10> button_sprites; 
+extern bn::vector<bn::sprite_ptr, 10> button_sprites; 
 
 
 

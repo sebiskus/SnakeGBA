@@ -6,6 +6,12 @@ void Menu::show_bg() {
     bg = bn::affine_bg_items::game_bg.create_bg(0, 0);
     bg->set_priority(3);
 }
+void Menu::show_logo() {
+    logo = bn::affine_bg_items::logo.create_bg(-64, -30);
+    logo->set_scale(0.4);
+    logo->set_wrapping_enabled(false);
+    
+}
 
 void Menu::show_snake() {
     snake_sprite = bn::sprite_items::snake_artwork.create_sprite(100, -50);
@@ -30,7 +36,7 @@ void Menu::scene_menu_intro() {
     clear_sprites();
     show_snake();
     tg.generate(-96, 0, game_title, menu_sprites);
-    tg.generate(-96, 20, "(Press a button)", menu_sprites);
+    tg.generate(-96, 40, "(Press a button)", menu_sprites);
 }
 
 #ifndef DEBUG
@@ -73,15 +79,42 @@ void Menu::scene_menu_main(int speed, bn::string<20> theme_name) {
 
 void Menu::update() {
     if(bg) {
-        // background loopt nach rechts nach rechts
         bg->set_x(bg->x() + 0.4);
     }
+    if(logo) { rotate_logo(); }
 }
+
+
+/* TODO */
+void Menu::rotate_logo() {
+    logo->set_rotation_angle(calculate_rotation_val() % 360);
+    check_rotation_val();
+
+}
+
+void Menu::check_rotation_val(){
+    if (logo_rotation_val == (360 * (1/8))) { 
+        flip_rotation = true;
+    } else if (logo_rotation_val == -(360 * (1/8))) {
+        flip_rotation = false;
+    }
+}
+
+unsigned int Menu::calculate_rotation_val() {
+    if (flip_rotation == false) {
+        logo_rotation_val++;
+    } else { logo_rotation_val--; }
+
+    return (bn::calculate_sin_lut_value(-128));
+};
+
+/* /TODO */
 
 
 // Gesamtes Menü resetten
 void Menu::clear() {
     clear_sprites();
+    clear_logo();
     bg.reset();
     snake_sprite.reset();
 }
@@ -91,6 +124,7 @@ void Menu::clear_sprites() {
     menu_sprites.clear();
     startup_sprites.clear();
 }
+void Menu::clear_logo() { logo.reset(); }
 
 void Menu::credits_test() {
         credits_picture = bn::regular_bg_items::credits_picture.create_bg(0,0);

@@ -39,8 +39,8 @@ class Game {
     public:
     Menu menu;
     Map game_map;
-    GAME_STATE current_game_state = MENU;
-    GAME_STATE switch_game_state = MENU;
+    GAME_STATE current_game_state;
+    GAME_STATE switch_game_state;
 
     unsigned int speed;
     unsigned int theme_id;

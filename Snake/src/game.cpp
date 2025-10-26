@@ -5,6 +5,7 @@ Game::Game(){
     this->startup = true;
     this->theme_id = 0;
     this->loop_handle = &menu_music;
+    this->current_game_state, switch_game_state = MENU;
     renderer.hide_bg();
 }
 
@@ -61,7 +62,10 @@ void Game::run() {
 void Game::startup_sequence(){
     menu.scene_startup();
     bn::sound_items::button_press.play();
+
     delay(2);
+    
+    menu.clear();
     loop_handle->stop();
     startup = false;
 }
@@ -100,13 +104,17 @@ if it ain't broke don't fix it :)
 */
 void Game::wait_for_input_menu(){
     if (scene::intro == true) {
+        menu.show_logo();
         while(!bn::keypad::a_pressed()){
-        loop_music(loop_handle);
-        menu.scene_menu_intro();
-        menu.update();
-        bn::core::update();
+            loop_music(loop_handle);
+            menu.scene_menu_intro();
+            menu.update();
+            bn::core::update();
         }
     }
+
+    menu.clear_logo();
+
     bn::sound_items::start.play();
     scene::intro = false;
     
@@ -148,6 +156,8 @@ void Game::initialize_game(){
     player.start(speed, game_map);
 
     // einmal initial rendern
+
+    renderer.load_palette();
     renderer.apply_theme(renderer.current_theme, current_theme);
     renderer.show_bg();           
     renderer.clear_all_tiles();
@@ -157,7 +167,6 @@ void Game::initialize_game(){
 }
 
 void Game::run_game(){
-
     controls.update_per_frame(player.get_direction());
     DIRECTION eff_dir = controls.peek_effective_direction(player.get_direction());
 
@@ -184,6 +193,7 @@ void Game::stop_game(){
     controls.clear();
     renderer.clear_all_tiles();
     renderer.hide_bg();         // BG ausblenden (oder renderer.shutdown_bg(); für Freigabe)
+    renderer.unload_palette();
     player.reset_player(player);                
     switch_game_state = MENU;
     reset_speed();

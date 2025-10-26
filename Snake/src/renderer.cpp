@@ -1,27 +1,10 @@
 #include "renderer.h"
-
-#include "bn_backdrop.h"
-#include "bn_optional.h"
-#include "bn_regular_bg_ptr.h"
-#include "bn_regular_bg_tiles_ptr.h"
-#include "bn_regular_bg_map_ptr.h"
-#include "bn_regular_bg_map_cell_info.h"
-#include "bn_bg_palette_ptr.h"
  
 
 namespace {
 
-constexpr int BG_COLS = 32;
-constexpr int BG_ROWS = 32;
-
 // 128x128 .bmp => 128/8 = 16 Tiles pro Reihe
 constexpr int TILES_PER_ROW = 16;
-
-bool s_inited = false;
-bn::optional<bn::regular_bg_tiles_ptr> s_tiles;
-bn::optional<bn::bg_palette_ptr>       s_palette;
-bn::optional<bn::regular_bg_map_ptr>   s_bg_map;
-bn::optional<bn::regular_bg_ptr>       s_bg;
 
 inline int theme_row_from_id(int id) {
     return id > 0 ? (id - 1) : 0;
@@ -35,13 +18,14 @@ inline int background_index_for(const theme& t) {
 } // namespace
 
 Renderer::Renderer() {
+    bn::backdrop::set_color(bn::color(0, 0, 0)); 
+}
 
-    bn::backdrop::set_color(bn::color(0, 0, 0));
-
+void Renderer::load_palette() {
     if(!s_inited) {
         // Tiles & Palette direkt aus themes.bmp
         s_tiles   = bn::regular_bg_tiles_items::themes.create_tiles();
-        s_palette = bn::bg_palette_items::themes.create_palette();
+        s_palette = bn::bg_palette_items::themes.create_palette(); //Glaub das macht Probleme
 
         // 32x32 Map im VRAM + BG erzeugen
         s_bg_map = bn::regular_bg_map_ptr::allocate(bn::size(BG_COLS, BG_ROWS), *s_tiles, *s_palette);
@@ -55,14 +39,18 @@ Renderer::Renderer() {
     }
 }
 
-Renderer::~Renderer() = default;
+void Renderer::unload_palette() {
+    s_palette = s_old_palette;
+}
 
 void Renderer::update_score(int score_value) {
     clear_sprites();
-    bn::string<32> score_text;
+
+    bn::string<16> score_text;
     bn::ostringstream score_stream(score_text);
     score_stream << "Score: " << score_value;
     _text_generator.generate(offset_x_text, -6, score_text, ui_sprites);
+
     _text_generator.generate(offset_x_text, 6, "select: stop", ui_sprites);
 }
 
@@ -116,7 +104,7 @@ void Renderer::draw_map(Map& map) {
             } else if(v == 3) {
                 tile_index = apple_idx;
             } else if(v == 0) {
-                //tile_index = floor_idx;           Farbpalette gefällt mir grad ned
+                //tile_index = floor_idx;           //Farbpalette gefällt mir grad ned
             }
 
             bn::regular_bg_map_cell_info info(vram[idx]);
