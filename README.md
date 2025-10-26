@@ -24,8 +24,8 @@ Style:
 - Neue Font implementieren
 
 Gameplay:
-- Ende einprogrammieren (Gewonnen)
-- Richtiges Pause Menü
+- Spielende ("Gewonnen!") implementieren
+- Richtiges Pause-Menü implementieren
 - 
 
 
@@ -39,40 +39,13 @@ Bug fixes:
 
 - Info in bn::info verlagern
 
-renderer.cpp
-- Translation Layer von Array => richtige Grafik auf dem GBA Display
--> tiles: 4x4px. Tile drawer = Array-Index * 2 + 1 für die Position
-
-player.cpp
-- Enthält Player Logik und die Steuerung
-
-map.cpp
-- Enthält Map als Array
-- 0 = floor, 1 = wall, 2 = player/snake, 3 = apple
-- Vielleicht wird da auch die Position berechnet sowie die spawn() Logik?
-
-game.cpp
-- Enthält weitere nützliche Methoden & Berechnungen
--> bspw. delay(), debug Funktionen, startup initialisierung
-
-
-
-
-
-
-
-
-
-
-
-
-OPTIONAL
+*OPTIONAL*
 
 palette.cpp
 - Mehr Grafikstyle
 - mission_scanner() => Prüft welche Missionen verfügbar sind und welche geschafft wurden.
 
 menu.cpp
-- Richtiges Menü inkl. language Options (json)
+- Richtiges Menü inkl. language Options implementieren
 
 
