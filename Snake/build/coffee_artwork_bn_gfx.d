@@ -1,1 +1,0 @@
-coffee_artwork_bn_gfx.o: coffee_artwork_bn_gfx.s
