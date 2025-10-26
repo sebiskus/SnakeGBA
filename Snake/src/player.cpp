@@ -39,12 +39,10 @@ Player::Player(){
     void Player::update(SCANNER scanner, Controls& controls) {
     move_counter++;
     if(move_counter >= move_delay) {
-        // 1) Eingabe gepuffert konsumieren (falls vorhanden und gültig)
         DIRECTION new_dir;
         if(controls.try_consume(direction, new_dir)) {
             direction = new_dir;
         }
-        // 2) Bewegung in gesetzter Richtung ausführen
         movement(scanner);
         move_counter = 0;
     }

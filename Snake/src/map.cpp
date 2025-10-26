@@ -17,20 +17,23 @@ bn::seed_random global_random; // Globaler Random-Generator mit Seed
 bool random_initialized = false; // Flag für Initialisierung
 
 
-// Seed Initialisierung
+/*
+* Seed Initialisierung:
+* ...Hab ehrlich gesagt ka was KI da gemacht hat. Läuft ned, daher
+* TODO,
+* TODO,
+* TODO!!!!
+*/
 void initialize_random_seed() {
     if (!random_initialized) {
-        // Kombiniere mehrere Hardware-basierte Werte für bessere Entropie
         unsigned int seed_base = reinterpret_cast<unsigned int>(&random_initialized);
         
-        // Sammle zusätzliche Entropie-Quellen
         int entropy_factor = 1;
         for (int i = 0; i < 10; i++) {
             entropy_factor ^= (bn::core::current_cpu_usage().integer() << (i % 4));
             bn::core::update(); // Kleine Verzögerung für Timing-Variation
         }
         
-        // Kombiniere alle Faktoren für finalen Seed
         unsigned int final_seed = seed_base ^ 
                                  (entropy_factor * 0x9E3779B9) ^ 
                                  (bn::core::last_missed_frames() * 1103515245);

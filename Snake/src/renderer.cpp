@@ -85,7 +85,6 @@ void Renderer::draw_map(Map& map) {
     const int apple_idx  = row_base + 3; // apple
 
     // map.cpp: 0 = safe area, 1 = border, 2 = player/snake, 3 = apple
-    // Wir rendern strikt aus Map: jede Zelle wird genau 1x gesetzt.
     for(int y = 0; y < y_size; ++y) {
         const int row = start_row + y;
         const int base = row * BG_COLS;
@@ -114,9 +113,6 @@ void Renderer::draw_map(Map& map) {
     }
 }
 
-void Renderer::render() {
-    // optional
-}
 
 void Renderer::hide_bg() {
     if(s_bg) {
@@ -131,7 +127,6 @@ void Renderer::show_bg() {
 }
 
 void Renderer::shutdown_bg() {
-    // Optional: komplettes Freigeben, falls eine „harte“ Rückkehr ins Menü gewünscht ist
     if(s_bg)      { s_bg.reset(); }
     if(s_bg_map)  { s_bg_map.reset(); }
     if(s_palette) { s_palette.reset(); }
