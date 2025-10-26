@@ -6,7 +6,17 @@ Befehl zum Compilen: export DEVKITPRO=/opt/devkitpro && sudo -E make -j6
 Python3, DEVKITARM und WONDERFUL_TOOLCHAIN müssen installiert sein (siehe Butano repo: https://github.com/GValiente/butano)
 ************************************************************************
 
-**TODO und issues**
+**issues**
+
+- Speed Geschwindigkeit nur noch die Hälfte. => Doppelte frame times prüfen
+- Seed fixen
+- Hintergrund ist pink (auch wenn`s cool ist)
+- Musik fixen
+- Speicher System programmieren + Highscores
+
+**TODOs (ignorieren bitte, danke)**
+
+- Info in bn::info verlagern
 
 player.cpp:
 - code für Steuerung simpler machen
@@ -18,9 +28,9 @@ Menü:
 Score:
 - Score System implementieren 
 - Individuelle Nutzer
-    > Anfangs nur generische Namen implementieren (Player A, B, C)
-    > New, Duplicate, Delete user, Wipe everything
-    > Danach Tastatureingabe implementieren
+    -> Anfangs nur generische Namen implementieren (Player A, B, C)
+    -> New, Duplicate, Delete user, Wipe everything
+    -> Danach Tastatureingabe implementieren
 
 Style:
 - paar fancy Animationen implementieren
@@ -29,19 +39,6 @@ Style:
 Gameplay:
 - Spielende ("Gewonnen!") implementieren
 - Richtiges Pause-Menü implementieren
-- 
-
-
-
-_issues:_
-
-- Speed Geschwindigkeit nur noch die Hälfte. Doppelte frame times prüfen
-- Seed fixen
-- Hintergrund ist pink (auch wenn`s cool ist)
-- Musik fixen
-- Speicher System programmieren + Highscores
-
-- Info in bn::info verlagern
 
 *OPTIONAL*
 
