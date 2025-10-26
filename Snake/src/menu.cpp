@@ -81,11 +81,17 @@ void Menu::update() {
     if(bg) {
         bg->set_x(bg->x() + 0.4);
     }
-    if(logo) { rotate_logo(); }
+    //if(logo) { rotate_logo(); }
 }
 
 
 /* TODO */
+
+/*
+* Rotation ist noch nicht richtig implementiert worden 
+* (bin zu dumm um gültige sin values zu berechnen)
+*/
+
 void Menu::rotate_logo() {
     logo->set_rotation_angle(calculate_rotation_val() % 360);
     check_rotation_val();
@@ -108,7 +114,7 @@ unsigned int Menu::calculate_rotation_val() {
     return (bn::calculate_sin_lut_value(-128));
 };
 
-/* /TODO */
+/* ende TODO */
 
 
 // Gesamtes Menü resetten
