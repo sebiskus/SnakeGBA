@@ -1,0 +1,23 @@
+#gitignore
+**/.gitignore
+!/.gitignore
+
+#DS_Store
+.DS_Store
+**/.DS_Store
+
+#.vscode
+.vscode
+**/.vscode
+
+#root
+/tests/
+/template/
+/examples/
+
+#Snake Folder
+/Snake/build/
+
+#some ROM files
+/Snake/Snake.elf
+/Snake/Snake.sav
