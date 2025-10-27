@@ -4,7 +4,7 @@
 
 ---
 
-**Language / Sprache:** [🇬🇧 English](#english) | [🇩🇪 Deutsch](#deutsch)
+**Language / Sprache:** [🇬🇧](#english) | [🇩🇪](#deutsch)
 
 ---
 
@@ -14,7 +14,7 @@
 
 **Compile command:**
 ```bash
-export [DEVKITPRO environment location] && sudo -E make -j[Number of CPU cores]
+export DEVKITPRO=[environment location] && sudo -E make -j[Number of CPU cores]
 ```
 
 **Example:**
@@ -27,10 +27,9 @@ Python3, DEVKITARM and WONDERFUL_TOOLCHAIN must be installed (see Butano repo: h
 
 ### Known Issues
 
-- Speed is only half now. => Check double frame times
-- Fix seed
-- Background is pink (even though it's cool)
-- Fix music
+- Fix seed generation
+- Background is pink (even though it looks cool)
+- Fix music loop
 
 **Note:** Source code comments are primarily in German.
 
@@ -42,7 +41,7 @@ Python3, DEVKITARM and WONDERFUL_TOOLCHAIN must be installed (see Butano repo: h
 
 **Befehl zum Compilen:**
 ```bash
-export [DEVKITPRO environment location] && sudo -E make -j[Core Anzahl deiner CPU]
+export DEVKITPRO=[environment location] && sudo -E make -j[Core Anzahl deiner CPU]
 ```
 
 **Beispiel:**
@@ -55,9 +54,8 @@ Python3, DEVKITARM und WONDERFUL_TOOLCHAIN müssen installiert sein (siehe Butan
 
 ### Bekannte Issues
 
-- Speed Geschwindigkeit nur noch die Hälfte. => Doppelte frame times prüfen
-- Seed fixen
-- Hintergrund ist pink (auch wenn's cool ist)
-- Musik fixen
+- Seed generation fixen
+- Hintergrund ist pink (auch wenn's cool aussieht)
+- Musik loop fixen
 
 **Hinweis:** Kommentare im Source-Code sind größtenteils auf Deutsch.
