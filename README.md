@@ -2,20 +2,19 @@
 
 <img width="1000" height="400" alt="Logo-GitHub" src="https://github.com/sebiskus/SnakeGBA/blob/c736ff35676bdbe95c39f27be6d84e183727de22/Logo-GitHub.png" />
 
-
 ************************************************************************
-Befehl zum Compilen: 
-`export [DEVKITPRO environment location] && sudo -E make -j[Core Anzahl deiner CPU]`
+**Compile command:**
+`export [DEVKITPRO environment location] && sudo -E make -j[Number of CPU cores]`
 
-Beispiel:
+**Example:**
 `export DEVKITPRO=/opt/devkitpro && sudo -E make -j6`
 
-Python3, DEVKITARM und WONDERFUL_TOOLCHAIN müssen installiert sein (siehe Butano repo: https://github.com/GValiente/butano)
+Python3, DEVKITARM and WONDERFUL_TOOLCHAIN must be installed (see Butano repo: https://github.com/GValiente/butano)  
 ************************************************************************
 
-**issues**
+**Issues**
 
-- Speed Geschwindigkeit nur noch die Hälfte. => Doppelte frame times prüfen
-- Seed fixen
-- Hintergrund ist pink (auch wenn`s cool ist)
-- Musik fixen
+- Speed is only half now. => Check double frame times
+- Fix seed
+- Background is pink (even though it's cool)
+- Fix music
