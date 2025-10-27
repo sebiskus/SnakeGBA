@@ -5,10 +5,10 @@
 
 ************************************************************************
 Befehl zum Compilen: 
-export [DEVKITPRO environment location] && sudo -E make -j[Core Anzahl deiner CPU]
+`export [DEVKITPRO environment location] && sudo -E make -j[Core Anzahl deiner CPU]`
 
-bsp:
-export DEVKITPRO=/opt/devkitpro && sudo -E make -j6
+Beispiel:
+`export DEVKITPRO=/opt/devkitpro && sudo -E make -j6`
 
 Python3, DEVKITARM und WONDERFUL_TOOLCHAIN müssen installiert sein (siehe Butano repo: https://github.com/GValiente/butano)
 ************************************************************************
