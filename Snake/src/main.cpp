@@ -1,5 +1,5 @@
 /*
-* GBA Snake
+* SnakeGBA
 * created by: @sebiskus
 * made with Butano https://github.com/GValiente/butano
 */
