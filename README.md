@@ -1,6 +1,6 @@
 ## SnakeGBA
 
-<img width="1000" height="400" alt="Logo-GitHub" src="https://github.com/sebiskus/SnakeGBA/blob/c736ff35676bdbe95c39f27be6d84e183727de22/Logo-GitHub.png" />
+<img width="1000" alt="Logo-GitHub" src="Logo-GitHub.png" />
 
 ---
 
@@ -34,8 +34,6 @@ Python3, DEVKITARM and WONDERFUL_TOOLCHAIN must be installed (see Butano repo: h
 
 **Note:** Source code comments are primarily in German.
 
----
-
 ## Deutsch
 
 ### Compile-Anleitung
@@ -60,3 +58,5 @@ Python3, DEVKITARM und WONDERFUL_TOOLCHAIN müssen installiert sein (siehe Butan
 - Musik loop fixen
 
 **Hinweis:** Kommentare im Source-Code sind größtenteils auf Deutsch.
+
+<img height="40" alt="Snake-GitHub" src="Snake-GitHub.png" />
