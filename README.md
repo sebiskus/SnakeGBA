@@ -1,6 +1,6 @@
 ## SnakeGBA
 
-<img width="1000" height="400" alt="Logo-GitHub" src="https://github.com/user-attachments/assets/6faf5a04-6eb3-4759-8675-2d6aee173f57" />
+<img width="1000" height="400" alt="Logo-GitHub" src="https://github.com/sebiskus/SnakeGBA/blob/c736ff35676bdbe95c39f27be6d84e183727de22/Logo-GitHub.png" />
 
 
 ************************************************************************
