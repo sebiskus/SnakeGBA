@@ -104,7 +104,6 @@ if it ain't broke don't fix it :)
 */
 void Game::wait_for_input_menu(){
     if (scene::intro == true) {
-        //menu.show_logo();
         while(!bn::keypad::a_pressed()){
             loop_music(loop_handle);
             menu.scene_menu_intro();
