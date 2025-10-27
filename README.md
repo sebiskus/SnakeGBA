@@ -28,7 +28,7 @@ Python3, DEVKITARM and WONDERFUL_TOOLCHAIN must be installed (see Butano repo: h
 ### Known Issues
 
 - Fix seed generation
-- Background is pink (even though it looks cool)
+- Background is pink after the end of the game
 - Fix music loop
 
 **Note:** Source code comments are primarily in German.
@@ -55,7 +55,7 @@ Python3, DEVKITARM und WONDERFUL_TOOLCHAIN müssen installiert sein (siehe Butan
 ### Bekannte Issues
 
 - Seed generation fixen
-- Hintergrund ist pink (auch wenn's cool aussieht)
+- Hintergrund ist nach dem Spielende pink
 - Musik loop fixen
 
 **Hinweis:** Kommentare im Source-Code sind größtenteils auf Deutsch.
