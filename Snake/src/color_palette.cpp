@@ -30,14 +30,14 @@ const theme bsod {
     {15,15,15},
     "Your GBA ran into a problem and needs to restart"
 };
-const theme rm {
+const theme special_theme_1 {
     "Special Theme 1",
     5,
     {0,0,0},
     {15,15,15},
     "RM"
 };
-const theme hka_kickerz {
+const theme special_theme_2 {
     "Special Theme 2",
     6,
     {2,2,2},
@@ -58,7 +58,7 @@ const theme debug {
     {15,15,15},
     "description"
 };
-theme themes[] = {basic, inverted, terminal, bsod, rm, hka_kickerz, pink, debug};
+theme themes[] = {basic, inverted, terminal, bsod, special_theme_1, special_theme_2, pink, debug};
 
 theme switch_theme(int theme_id) {
     return themes[theme_id];
