@@ -5,7 +5,7 @@ Game::Game(){
     this->startup = true;
     this->theme_id = 0;
     this->loop_handle = &menu_music;
-    this->current_game_state, switch_game_state = MENU;
+    this->current_game_state, this->switch_game_state = MENU;
     renderer.hide_bg();
 }
 
@@ -62,10 +62,7 @@ void Game::run() {
 void Game::startup_sequence(){
     menu.scene_startup();
     bn::sound_items::button_press.play();
-
     delay(2);
-    
-    menu.clear();
     loop_handle->stop();
     startup = false;
 }
@@ -88,15 +85,8 @@ void Game::adjust_speed(){
 }
 
 void Game::adjust_theme_id(){
-    if (bn::keypad::left_pressed()) {
-        if (this->theme_id > 0) {
-            this->theme_id--;
-        }
-    } else if (bn::keypad::right_pressed()) {
-        if (this->theme_id < 7) {
-            this->theme_id++;
-        }
-    }
+    if (bn::keypad::left_pressed() && theme_id > 0)     { theme_id--; }
+    if (bn::keypad::right_pressed() && theme_id < 7)    { theme_id++; }
 }
 
 /*
@@ -104,7 +94,6 @@ if it ain't broke don't fix it :)
 */
 void Game::wait_for_input_menu(){
     if (scene::intro == true) {
-        //menu.show_logo();
         while(!bn::keypad::a_pressed()){
             loop_music(loop_handle);
             menu.scene_menu_intro();
@@ -147,15 +136,13 @@ void Game::run_menu(){
 
 
 void Game::initialize_game(){
-    initialize_random_seed(); // Seed beim Spielstart initialisieren
+    initialize_random_seed();
 
     loop_handle->stop();
             
     controls.clear();
     Map& game_map = selectMap(0);
     player.start(speed, game_map);
-
-    // einmal initial rendern
 
     renderer.load_palette();
     renderer.apply_theme(renderer.current_theme, current_theme);
@@ -183,19 +170,27 @@ void Game::run_game(){
     if (bn::keypad::select_held() || current_scanner == BORDER || current_scanner == PLAYER) {
         switch_game_state = STOP;
     }
-
+    if (bn::keypad::start_pressed()) { pause_game();}
     bn::core::update();
-
-    //if (bn::keypad::start_held()) {player.pause();}
 }
 
 void Game::stop_game(){
     controls.clear();
     renderer.clear_all_tiles();
-    renderer.hide_bg();         // BG ausblenden (oder renderer.shutdown_bg(); für Freigabe)
+    renderer.hide_bg();
     renderer.unload_palette();
     player.reset_player(player);                
     switch_game_state = MENU;
     reset_speed();
     Map& game_map = selectMap(0);
+}
+
+void Game::pause_game() {
+    bn::sound_items::button_press.play();
+    delay(0.5);
+    while (!bn::keypad::start_pressed())
+    {
+        bn::core::update();
+    }
+    bn::sound_items::button_press.play();
 }

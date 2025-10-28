@@ -11,29 +11,20 @@ struct rgb {
     int blue;
 };
 
-//TODO
 
 struct theme {
-    bn::string<20> name = "theme";
-   // rgb floor;
-   // rgb wall;
-   // rgb snake;
-   // rgb apple;
-   
-    int id;
-    rgb background;
-    rgb font;
+    bn::string<20> name        = "theme";
+    int            id;
+    rgb            font;       //currently unused
     bn::string<50> description = "-";
-    //hier evtl. ein enum-tag für missionen
 };
 
-// Theme-Deklarationen (extern)
 extern const theme basic;
 extern const theme inverted;
 extern const theme terminal;
 extern const theme bsod;
-extern const theme rm;
-extern const theme hka_kickerz;
+extern const theme special_theme_1;
+extern const theme special_theme_2;
 extern const theme pink;
 extern const theme debug;
 

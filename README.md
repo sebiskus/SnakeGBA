@@ -18,7 +18,7 @@ made with [Butano](https://github.com/GValiente/butano)
 export DEVKITPRO=[environment location] && sudo -E make -j[Number of CPU cores]
 ```
 
-**Example:**
+**Example (MacOS):**
 ```bash
 export DEVKITPRO=/opt/devkitpro && sudo -E make -j6
 ```
@@ -43,7 +43,7 @@ Python3, DEVKITARM and WONDERFUL_TOOLCHAIN must be installed (see Butano repo: h
 export DEVKITPRO=[environment location] && sudo -E make -j[Core Anzahl deiner CPU]
 ```
 
-**Beispiel:**
+**Beispiel (MacOS):**
 ```bash
 export DEVKITPRO=/opt/devkitpro && sudo -E make -j6
 ```

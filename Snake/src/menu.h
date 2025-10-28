@@ -42,11 +42,6 @@ public:
     
     void show_snake();
 
-    unsigned int rotation_val;
-    void rotate_logo();
-    unsigned int calculate_rotation_val();
-    void check_rotation_val();
-
 /*
 Szenen:
 /Boot

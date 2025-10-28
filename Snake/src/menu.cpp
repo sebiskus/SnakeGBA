@@ -62,14 +62,21 @@ void Menu::scene_menu_main(int speed, bn::string<20> theme_name) {
 
     show_snake();
 }
-#endif
-
-#ifdef DEBUG
+#else
 void Menu::scene_menu_main(int speed, bn::string<20> theme_name) {
     clear_sprites(); // Sprites zurücksetzen vor neuer Erstellung
+
+    show_logo();
+
     
-    _tg.generate(-96, -28, game_title, menu_sprites);
+    tg.generate(-96, -28, game_title, menu_sprites);
     tg_small.generate(-96, -8, "DEBUG (Press A to start)", menu_sprites);
+
+    bn::string<52> debug_text;
+    bn::ostringstream string_stream_theme(debug_text);
+
+    string_stream_theme << "val: " << debug_val;
+    tg_small.generate(-96, 62, debug_text, menu_sprites_theme);
 
 }
 #endif
@@ -78,40 +85,11 @@ void Menu::update() {
     if(bg) {
         bg->set_x(bg->x() + 0.4);
     }
-    //if(logo) { rotate_logo(); }
+    
+    #ifdef DEBUG
+    debug_set_val(debug_val);
+    #endif
 }
-
-
-/* TODO */
-
-/*
-* Rotation ist noch nicht richtig implementiert worden 
-* (bin zu dumm um gültige sin values zu berechnen)
-*/
-
-void Menu::rotate_logo() {
-    logo->set_rotation_angle(calculate_rotation_val() % 360);
-    check_rotation_val();
-
-}
-
-void Menu::check_rotation_val(){
-    if (logo_rotation_val == (360 * (1/8))) { 
-        flip_rotation = true;
-    } else if (logo_rotation_val == -(360 * (1/8))) {
-        flip_rotation = false;
-    }
-}
-
-unsigned int Menu::calculate_rotation_val() {
-    if (flip_rotation == false) {
-        logo_rotation_val++;
-    } else { logo_rotation_val--; }
-
-    return (bn::calculate_sin_lut_value(-128));
-};
-
-/* ende TODO */
 
 
 // Gesamtes Menü resetten
