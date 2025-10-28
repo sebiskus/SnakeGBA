@@ -15,13 +15,9 @@ struct rgb {
 
 struct theme {
     bn::string<20> name = "theme";
-   // rgb floor;
-   // rgb wall;
-   // rgb snake;
-   // rgb apple;
-   
+
     int id;
-    rgb background;
+    rgb background; //wird nicht genutzt
     rgb font;
     bn::string<50> description = "-";
     //hier evtl. ein enum-tag für missionen

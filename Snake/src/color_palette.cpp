@@ -14,7 +14,7 @@ const theme inverted {
     2,
     {15,15,15},
     {0,0,0},
-    "Für diejenigen, die Blind werden wollen"
+    "Light-Mode"
 };
 const theme terminal {
     "Terminal",
@@ -24,32 +24,32 @@ const theme terminal {
     "sudo rm -fr /"
 };
 const theme bsod {
-    "Blue Screen of Death",
+    "BSOD",
     4,
     {0,0,0},
     {15,15,15},
-    "Ein Fehler ist aufgetreten"
+    "Your GBA ran into a problem and needs to restart"
 };
 const theme rm {
-    "Real Madrid",
+    "Special Theme 1",
     5,
     {0,0,0},
     {15,15,15},
-    "CR7"
+    "RM"
 };
 const theme hka_kickerz {
-    "HKA Kickerz",
+    "Special Theme 2",
     6,
     {2,2,2},
     {15,15,15},
-    "..."
+    "Kickerz"
 };
 const theme pink {
     "Pink",
     7,
     {0,0,0},
     {15,15,15},
-    "Ziemlich pink."
+    "pretty pink"
 };
 const theme debug {
     "debug_theme",
