@@ -13,13 +13,10 @@ struct rgb {
 
 
 struct theme {
-    bn::string<20> name = "theme";
-
-    int id;
-    rgb background; //wird nicht genutzt
-    rgb font;
+    bn::string<20> name        = "theme";
+    int            id;
+    rgb            font;       //currently unused
     bn::string<50> description = "-";
-    //hier evtl. ein enum-tag für missionen
 };
 
 extern const theme basic;

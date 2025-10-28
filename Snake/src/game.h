@@ -59,6 +59,7 @@ class Game {
     void stop_game();
     void run();
     void run_game();
+    void pause_game();
 
     /*delay time in seconds. */
     void delay(double time);

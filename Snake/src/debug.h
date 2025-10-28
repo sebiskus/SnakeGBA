@@ -5,8 +5,8 @@
 #include "bn_keypad.h"
 
 /*
-Header dient dazu da um global debug Funktionen auszuführen.
-Zum Debuggen: DEBUG Flag auskommentieren
+*   Header dient dazu da um global debug Funktionen auszuführen.
+*   -> Zum Debuggen: DEBUG Flag auskommentieren
 */
 
 
