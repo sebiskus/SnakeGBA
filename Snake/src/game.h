@@ -7,7 +7,6 @@
 
 #include "player.h"
 #include "map.h"
-#include "game.h"
 #include "renderer.h"
 #include "game_state.h"
 #include "menu.h"
@@ -26,21 +25,20 @@
 
 
 class Game {
-    Player player;
-    Renderer renderer;
-    SCANNER scanner;
-    theme current_theme;
-    Controls controls;
+    Player      player;
+    Renderer    renderer;
+    SCANNER     scanner;
+    theme       current_theme;
+    Controls    controls;
 
     bool startup;
-    
-
+    bool pause;
 
     public:
-    Menu menu;
-    Map game_map;
-    GAME_STATE current_game_state;
-    GAME_STATE switch_game_state;
+    Menu        menu;
+    Map         game_map;
+    GAME_STATE  current_game_state;
+    GAME_STATE  switch_game_state;
 
     unsigned int speed;
     unsigned int theme_id;
@@ -55,7 +53,9 @@ class Game {
     void startup_sequence();
 
     void run_menu();
+
     void initialize_game();
+    
     void stop_game();
     void run();
     void run_game();

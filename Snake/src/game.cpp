@@ -24,28 +24,30 @@ void Game::run() {
     }
 
     switch(current_game_state) {
-        case INITIALIZE: {       //Hier wird die Runde initialisiert
-            initialize_game();
-            break;
-        }
         case MENU: {
             run_menu();
             break;
         }
-        case STOP: {
-            stop_game();
+        case INITIALIZE: {       //Hier wird die Runde initialisiert
+            initialize_game();
             break;
         }
         case RUNNING: {
             run_game();
             break;
         }
-        case PAUSE: {           //TODO
+        case PAUSE: {
+            pause_game();
+            break;
+        }
+        case STOP: {
+            stop_game();
             break;
         }
         case _DEBUG: {          //optional zum Debuggen
             //switched nach a drücken hierhin
             run_game();
+            pause_game();
             break;
         }
         default:
@@ -75,7 +77,7 @@ void Game::delay(double time){
 }
 
 void Game::adjust_speed(){
-    if (bn::keypad::up_pressed() && speed < 12) {
+    if (bn::keypad::up_pressed() && speed < 10) {
             increase_speed();
         } else if (bn::keypad::select_pressed()) {
             reset_speed();
@@ -137,41 +139,39 @@ void Game::run_menu(){
 
 void Game::initialize_game(){
     initialize_random_seed();
-
-    loop_handle->stop();
-            
+    loop_handle->stop();    
     controls.clear();
     Map& game_map = selectMap(0);
     player.start(speed, game_map);
-
+    renderer.update_score(player.get_snake_body().size());
     renderer.load_palette();
     renderer.apply_theme(renderer.current_theme, current_theme);
     renderer.show_bg();           
     renderer.clear_all_tiles();
     renderer.draw_map(game_map);
-    renderer.update_score(player.get_snake_body().size());
     switch_game_state = RUNNING;
+    delay(0.5);
 }
 
 void Game::run_game(){
-    controls.update_per_frame(player.get_direction());
-    DIRECTION eff_dir = controls.peek_effective_direction(player.get_direction());
+    if (!bn::keypad::start_held()){
+        controls.update_per_frame(player.get_direction());
+        DIRECTION eff_dir = controls.peek_effective_direction(player.get_direction());
 
-    SCANNER next_scan = player.check_next_position(game_map, eff_dir);
-    player.update(next_scan, controls);
+        SCANNER next_scan = player.check_next_position(game_map, eff_dir);
+        player.update(next_scan, controls);
 
-    SCANNER current_scanner = player.front_scanner(game_map, switch_game_state, player.get_snake_body());
+        SCANNER current_scanner = player.front_scanner(game_map, switch_game_state, player.get_snake_body());
 
-    update_map(game_map, 0, player.get_snake_body());
+        update_map(game_map, 0, player.get_snake_body());
 
-    renderer.draw_map(game_map);
-    renderer.update_score(player.get_snake_body().size());
+        renderer.draw_map(game_map);
+        renderer.update_score(player.get_snake_body().size());
 
-    if (bn::keypad::select_held() || current_scanner == BORDER || current_scanner == PLAYER) {
-        switch_game_state = STOP;
-    }
-    if (bn::keypad::start_pressed()) { pause_game();}
-    bn::core::update();
+        if (bn::keypad::select_held() || current_scanner == BORDER || current_scanner == PLAYER) {
+            switch_game_state = STOP;
+        }
+    } else { switch_game_state = PAUSE; }
 }
 
 void Game::stop_game(){
@@ -188,9 +188,8 @@ void Game::stop_game(){
 void Game::pause_game() {
     bn::sound_items::button_press.play();
     delay(0.5);
-    while (!bn::keypad::start_pressed())
-    {
-        bn::core::update();
-    }
+    while (!bn::keypad::start_pressed()) { bn::core::update(); }
     bn::sound_items::button_press.play();
+    switch_game_state = RUNNING;
+    delay(0.5);
 }
