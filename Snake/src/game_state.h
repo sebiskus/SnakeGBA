@@ -2,11 +2,13 @@
 #define GAME_STATE_H
 
 enum GAME_STATE {
-    STOP,        // Spiel läuft nicht
-    RUNNING,     // Spiel läuft
-    PAUSE,       // pausiert: keine Aktualisierungen
+    STARTUP,
     MENU,
     INITIALIZE,
+    RUNNING,     // Spiel läuft
+    PAUSE,       // pausiert: keine Aktualisierungen
+    STOP,        // Spiel läuft nicht
+    
     _DEBUG,
 };
 

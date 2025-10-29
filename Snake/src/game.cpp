@@ -5,25 +5,24 @@ Game::Game(){
     this->startup = true;
     this->theme_id = 0;
     this->loop_handle = &menu_music;
-    this->current_game_state, this->switch_game_state = MENU;
+    this->current_game_state, this->switch_game_state = STARTUP;
     renderer.hide_bg();
 }
 
 void Game::run() {
 
     #ifdef DEBUG
-    startup = false;
+    switch_game_state = MENU;
     BN_LOG("Current game state: ", switch_game_state);
     #endif
 
     current_game_state = switch_game_state;
 
-    while (startup) { 
-        startup_sequence();
-        bn::core::update();
-    }
-
     switch(current_game_state) {
+        case STARTUP: {
+            startup_sequence();
+            break;
+        }
         case MENU: {
             run_menu();
             break;
@@ -66,7 +65,7 @@ void Game::startup_sequence(){
     bn::sound_items::button_press.play();
     delay(2);
     loop_handle->stop();
-    startup = false;
+    switch_game_state = MENU;
 }
 
 void Game::delay(double time){
