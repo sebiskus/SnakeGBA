@@ -8,7 +8,6 @@
 */
 
 #include "map.h"
-#include "bn_core.h"
 
 spawn current_apple_location;
 bool apple_exists = false;

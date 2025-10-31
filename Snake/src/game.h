@@ -61,8 +61,7 @@ class Game {
     void run_game();
     void pause_game();
 
-    /*delay time in seconds. */
-    void delay(double time);
+    void delay(double seconds);
     void wait_for_input_menu();
 
     void timer();

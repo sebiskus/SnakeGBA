@@ -44,9 +44,7 @@ void Game::run() {
             break;
         }
         case _DEBUG: {          //optional zum Debuggen
-            //switched nach a drücken hierhin
             run_game();
-            pause_game();
             break;
         }
         default:
@@ -68,8 +66,8 @@ void Game::startup_sequence(){
     switch_game_state = MENU;
 }
 
-void Game::delay(double time){
-    int frames = 60 * time;
+void Game::delay(double seconds){
+    int frames = 60 * seconds;
     for (int i = 0; i < frames; i++) {
         bn::core::update();
     }

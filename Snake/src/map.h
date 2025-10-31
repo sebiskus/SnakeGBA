@@ -4,6 +4,8 @@
 #include "bn_vector.h"
 #include "bn_random.h"
 #include "bn_seed_random.h"
+#include "bn_core.h"
+
 
 
 constexpr int x_size = 16;
