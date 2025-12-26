@@ -26,7 +26,7 @@ export DEVKITPRO=/opt/devkitpro && sudo -E make -j6
 **Requirements:**
 Python3, DEVKITARM and WONDERFUL_TOOLCHAIN must be installed (see Butano repo: https://github.com/GValiente/butano)
 
-### Known Issues
+### TODO
 
 - Fix seed generation
 - Background is pink after the end of the game
@@ -51,7 +51,7 @@ export DEVKITPRO=/opt/devkitpro && sudo -E make -j6
 **Voraussetzungen:**
 Python3, DEVKITARM und WONDERFUL_TOOLCHAIN müssen installiert sein (siehe Butano repo: https://github.com/GValiente/butano)
 
-### Bekannte Issues
+### TODO
 
 - Seed generation fixen
 - Hintergrund ist nach dem Spielende pink
